@@ -1,0 +1,11 @@
+@include font-face("HalvarBreitCY", "#{$url-font}/HalvarBreitCY-Bold/HalvarBreitCY-Bold", "ttf") {
+	font-weight: 700;
+}
+
+@include font-face("HalvarBreitCY", "#{$url-font}/HalvarBreitCY-Medium/HalvarBreitCY-Medium", "ttf") {
+	font-weight: 500;
+}
+
+@include font-face("GothamPro", "#{$url-font}/GothamPro-Regular/GothamPro-Regular", "ttf") {
+	font-weight: 400;
+}

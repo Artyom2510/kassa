@@ -1,0 +1,10 @@
+.root {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	/* stylelint-disable-next-line */
+	height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+	/* stylelint-disable-next-line */
+	height: calc(var(--vh, 1vh) * 100);
+	padding-top: 80px;
+}
