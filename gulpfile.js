@@ -104,7 +104,7 @@ function devHtml() {
 	return gulp.src(routes.watch.html).pipe(browserSync.reload({ stream: true }));
 }
 
-var isNoMinCss = function(file) {
+var isNoMinCss = function (file) {
 	return !options.has('no-min') && file.basename.indexOf('.min.css') === -1;
 };
 
@@ -116,7 +116,7 @@ function buildCss() {
 		.pipe(gulp.dest(routes.build.css)); // Перемещение в папку build
 }
 
-var isNoMinJs = function(file) {
+var isNoMinJs = function (file) {
 	return !options.has('no-min') && file.basename.indexOf('.min.js') === -1;
 };
 
@@ -135,7 +135,7 @@ function buildHtml() {
 			gulpif(
 				!options.has('no-min'),
 				// eslint-disable-next-line no-useless-escape
-				replace(/(src|href)=\".+(\.css|\.js)\"/g, function(match) {
+				replace(/(src|href)=\".+(\.css|\.js)\"/g, function (match) {
 					var res = match;
 					if (match.indexOf('.js') !== -1) {
 						if (match.indexOf('.min.js') === -1) {
@@ -183,7 +183,7 @@ function deploy() {
 		rsync({
 			root: routes.build.root,
 			hostname: 'www-root@80.78.240.209',
-			destination: 'www/test.grechka.digital/max/',
+			destination: 'www/test.grechka.digital/kassa/',
 			// include: ['*.htaccess'], // Included files
 			exclude: ['**/Thumbs.db', '**/*.DS_Store'],
 			recursive: true,
