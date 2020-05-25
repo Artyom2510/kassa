@@ -130,17 +130,48 @@ $(function () {
 		$('.btn-burger').removeClass('btn-burger_open');
 	});
 
-	$(window).on('wheel', function (event) {
-		if (event.originalEvent.deltaY < 0) {
+	// // Скрыть/показать шапку
+	// $('.root').on('wheel', function (event) {
+	// 	if (event.originalEvent.deltaY < 0) {
+	// 		if ($('.header').hasClass('header_hide')) {
+	// 			$('.header').removeClass('header_hide');
+	// 		}
+	// 	}
+	// 	if (event.originalEvent.deltaY > 0) {
+	// 		if (!$('.header').hasClass('header_hide')) {
+	// 			$('.header').addClass('header_hide');
+	// 			$('.menu__products-preview').switchPopup('close');
+	// 		}
+	// 	}
+	// });
+
+	var st = $('.root').scrollTop();
+	var prevScroll = st;
+	$('.root').on('scroll', function (e) {
+		st = $('.root').scrollTop();
+		if (prevScroll > st) {
 			if ($('.header').hasClass('header_hide')) {
 				$('.header').removeClass('header_hide');
 			}
-		}
-		if (event.originalEvent.deltaY > 0) {
-			if (!$('.header').hasClass('header_hide')) {
+		} else if (!$('.header').hasClass('header_hide')) {
+			if (st > 100) {
 				$('.header').addClass('header_hide');
 				$('.menu__products-preview').switchPopup('close');
 			}
 		}
+		prevScroll = st;
+	});
+
+	// Добавляю пробелы в цене
+	$('.js-price').each(function (index, el) {
+		var resultArr = [];
+		var reverseTextArr = $(el).text().split('').reverse();
+		for (var i = 0; i < reverseTextArr.length; i++) {
+			resultArr.push(reverseTextArr[i]);
+			if ((i + 1) % 3 === 0) {
+				resultArr.push(' ');
+			}
+		}
+		$(el).text(resultArr.reverse().join(''));
 	});
 });

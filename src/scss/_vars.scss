@@ -18,9 +18,9 @@ $breakpoints: (
 	xs: 375px,
 	sm: 768px,
 	md: 1024px,
-	lg: 1305px,
-	xl: 1465px,
-	xxl: 1945px
+	lg: 1280px,
+	xl: 1440px,
+	xxl: 1920px
 ) !default;
 
 // Настройки контейнера
@@ -37,6 +37,13 @@ $max-widths: (
 
 $grid-gutter-width: 24px !default; // Отступ между колонками ( сумма падингов одной колонки )
 $grid-columns: 12 !default; // Количество колонок
+
+@mixin dataphone-box() {
+	background-image: url("#{$url-img}/ui-icon/border-top-left.svg"), url("#{$url-img}/ui-icon/border-top-right.svg"), url("#{$url-img}/ui-icon/border-bottom-left.svg"), url("#{$url-img}/ui-icon/border-bottom-right.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-size: 12px 8px, 12px 8px, 12px 8px, 12px 8px;
+	background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+}
 
 // Импорт вспомогательных сниппетов (всегда в конце)
 @import "node_modules/sass-snippets/scss/snippets";

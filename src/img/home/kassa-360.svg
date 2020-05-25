@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="284" height="48" fill="none" viewBox="0 0 284 48">
+    <path stroke="url(#kassa360-grad-2)" d="M283.5 24c0 1.442-.863 2.933-2.703 4.452-1.835 1.515-4.571 3-8.142 4.427-7.137 2.852-17.494 5.43-30.329 7.6C216.664 44.816 181.193 47.5 142 47.5c-39.193 0-74.664-2.685-100.326-7.023-12.835-2.169-23.192-4.748-30.33-7.6-3.57-1.427-6.306-2.91-8.14-4.426C1.363 26.932.5 25.442.5 24.001c0-1.442.863-2.932 2.703-4.451 1.835-1.516 4.57-3 8.142-4.427 7.137-2.852 17.494-5.43 30.33-7.6C67.335 3.186 102.806.501 142 .501c39.193 0 74.664 2.685 100.326 7.022 12.835 2.17 23.192 4.748 30.329 7.6 3.571 1.427 6.307 2.911 8.142 4.427 1.84 1.52 2.703 3.01 2.703 4.45z"/>
+    <defs>
+        <linearGradient id="kassa360-grad-1" x1="142" x2="142" y1="24" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E5E5E5"/>
+            <stop offset="1" stop-color="#E5E5E5" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="kassa360-grad-2" x1="142" x2="142" y1="24" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E2241B"/>
+            <stop offset="1" stop-color="#E2241B" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+</svg>

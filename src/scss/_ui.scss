@@ -28,6 +28,7 @@ section {
 .h5 {
 	font-family: "HalvarBreitCY", sans-serif;
 	line-height: 1.2;
+	text-transform: uppercase;
 }
 
 .h1 {
@@ -75,31 +76,11 @@ section {
 	font-weight: 500;
 }
 
-@include media(md) {
-	.h1 {
-		font-size: 30px;
-	}
-
-	.h2 {
-		font-size: 24px;
-	}
-
-	.h3 {
-		font-size: 16px;
-	}
-
-	.h4 {
-		font-size: 14px;
-	}
-}
-
-@include media(xs) {
-	.h1 {
-		font-size: 28px;
-	}
-}
-
 .b-content {
+	> p {
+		margin-bottom: 16px;
+	}
+
 	// Нумерованый список
 	ol {
 		counter-reset: list;
@@ -177,6 +158,41 @@ section {
 			}
 		}
 	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// Ссылка
+.link {
+	font-family: "HalvarBreitCY", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16px;
+	letter-spacing: 1.68px;
+	color: #000000;
+	text-transform: uppercase;
+
+	@include media(md) {
+		font-size: 13px;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: #000000;
+	}
+
+	&_white {
+		color: #fff;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: #fff;
+		}
+	}
 }
 
 // Кнопки
@@ -192,6 +208,16 @@ section {
 	text-decoration: none !important;
 	padding: 0;
 	cursor: pointer;
+
+	@include media(xl) {
+		width: 204px;
+		height: 140px;
+	}
+
+	@include media(md) {
+		width: 142px;
+		height: 98px;
+	}
 
 	&__wrap {
 		position: relative;
@@ -213,6 +239,7 @@ section {
 		line-height: 16px;
 		letter-spacing: 1.68px;
 		color: #ffffff;
+		text-transform: uppercase;
 	}
 
 	&__arrow,
@@ -227,6 +254,11 @@ section {
 	&__arrow {
 		transform: translate(-50%, -50%);
 		opacity: 1;
+
+		@include media(md) {
+			width: 80px;
+			height: auto;
+		}
 	}
 
 	&__basket {
@@ -297,6 +329,7 @@ section {
 	outline: none !important;
 	background-color: transparent;
 	text-decoration: none !important;
+	text-transform: uppercase;
 	padding: 0;
 	cursor: pointer;
 
@@ -430,6 +463,7 @@ section {
 	outline: none !important;
 	background-color: transparent;
 	text-decoration: none !important;
+	text-transform: uppercase;
 	padding: 0 26px 9px 0;
 	cursor: pointer;
 
@@ -750,5 +784,72 @@ section {
 			height: 22px;
 			background-color: transparent;
 		}
+	}
+}
+
+.dataphone {
+	color: $ac;
+}
+
+// tooltip
+.tooltip {
+	position: relative;
+
+	&::before,
+	&::after {
+		position: absolute;
+		display: none;
+	}
+
+	&::before {
+		content: "";
+		top: 100%;
+		left: 50%;
+		width: 0;
+		height: 0;
+		border: 10px solid $kassaBg;
+		border-top: none;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		transform: translateX(-50%);
+	}
+
+	&::after {
+		content: attr(data-tooltip);
+		top: calc(100% + 10px);
+		left: 50%;
+		width: 373px;
+		background-color: $kassaBg;
+		padding: 16px;
+		transform: translateX(-58px);
+		color: #ffffff;
+
+		@include media(xxs) {
+			width: calc(100% - 24px);
+		}
+	}
+
+	&:hover {
+		&::before,
+		&::after {
+			display: block;
+		}
+	}
+}
+
+.video {
+	position: relative;
+	@include aspect-ratio(2560, 1080);
+
+	video,
+	iframe {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		outline: none !important;
 	}
 }

@@ -8,3 +8,22 @@
 	height: calc(var(--vh, 1vh) * 100);
 	padding-top: 80px;
 }
+
+.sect-help {
+	padding-top: 128px;
+	padding-bottom: 189px;
+
+	&__title {
+		margin-bottom: 32px;
+		text-align: center;
+	}
+
+	&__desc {
+		margin-bottom: 32px;
+		text-align: center;
+	}
+
+	&__btn {
+		text-align: center;
+	}
+}
