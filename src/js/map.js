@@ -91,13 +91,42 @@ function init() {
 			});
 		}
 
+		var lastId = null;
+
+		function setOpt(thisId) {
+			// Старая метка
+			if (lastId) {
+				points._objects[lastId].options.set({
+					iconLayout: 'default#image',
+					iconImageHref: 'img/ui-icon/pin.svg',
+					iconImageSize: [54, 61],
+					iconImageOffset: [-27, -30]
+				});
+			}
+
+			// Новая метка
+			Object.keys(points._objects).forEach(function (i) {
+				if (points._objects[i].options._options.id === thisId) {
+					lastId = i;
+					points._objects[i].options.set({
+						iconLayout: 'default#image',
+						iconImageHref: 'img/ui-icon/pin-active.svg',
+						iconImageSize: [54, 61],
+						iconImageOffset: [-27, -30]
+					});
+				}
+			});
+		}
+
 		// Клик по метке и вытаскивание инфы
 		points.addEvents('click', function (e) {
 			var targetPoint = e.get('target').properties._data;
+			var targetId = e.get('target').options._options.id;
 			fillPopup(targetPoint);
 			if (!popupMap.hasClass('display')) {
 				popupMap.switchPopup('open');
 			}
+			setOpt(targetId);
 		});
 
 		clusterer.add(points._objects);
