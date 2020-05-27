@@ -1,0 +1,112 @@
+.popup-map {
+	position: absolute;
+	z-index: 2;
+	bottom: 8px;
+	right: 8px;
+	display: none;
+	width: 368px;
+	min-height: 300px;
+	padding: 24px;
+	opacity: 0;
+	overflow-x: hidden;
+	background-color: #fff;
+	border: 1px solid $ac;
+	transition: opacity 0.3s ease;
+
+	@include media(xs) {
+		width: calc(100% - 28px);
+		min-height: 282px;
+		padding: 16px;
+	}
+
+	&.display {
+		display: block;
+	}
+
+	&.visible {
+		opacity: 1;
+	}
+
+	&__close {
+		position: absolute;
+		top: 13px;
+		right: 8px;
+		display: block;
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		background-color: #fff;
+		border: none;
+		outline: none !important;
+		cursor: pointer;
+
+		@include media(xs) {
+			top: 5px;
+			right: 0;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: block;
+			width: 16px;
+			height: 2px;
+			background-color: #bebfbe;
+		}
+
+		&::before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+
+	&__name {
+		min-height: 38px;
+		margin-bottom: 16px;
+		padding-right: 34px;
+
+		@include media(xs) {
+			min-height: 34px;
+		}
+	}
+
+	&__list {
+		margin: 0;
+	}
+}
+
+.map-list {
+	display: block;
+	padding: 0;
+	list-style-type: none;
+
+	&__item {
+		display: block;
+		margin-bottom: 16px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		span {
+			display: block;
+			margin-bottom: 4px;
+			font-family: "HalvarBreitCY", sans-serif;
+			font-size: 12px;
+			line-height: 1.2;
+			font-weight: 400;
+			color: #bebfbe;
+		}
+
+		p {
+			margin: 0;
+			color: #262626;
+		}
+	}
+}

@@ -1048,7 +1048,6 @@
 		@include media(xs) {
 			width: 100%;
 			margin-bottom: 32px;
-			padding-left: 12px;
 		}
 	}
 
@@ -1679,11 +1678,11 @@
 		}
 
 		@include media(xl) {
-			width: 485px;
+			width: 486px;
 		}
 
-		@include media(md) {
-			width: 392px;
+		@include media(lg) {
+			width: 425px;
 		}
 
 		@include media(sm) {
@@ -1709,5 +1708,13 @@
 
 	&__title {
 		margin-bottom: 24px;
+	}
+
+	&__desc {
+		margin-bottom: 32px;
+
+		@include media(sm) {
+			margin-bottom: 24px;
+		}
 	}
 }

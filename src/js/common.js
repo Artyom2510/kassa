@@ -147,7 +147,7 @@ $(function () {
 
 	var st = $('.root').scrollTop();
 	var prevScroll = st;
-	$('.root').on('scroll', function (e) {
+	$('.root').on('scroll', function () {
 		st = $('.root').scrollTop();
 		if (prevScroll > st) {
 			if ($('.header').hasClass('header_hide')) {
