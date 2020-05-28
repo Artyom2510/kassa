@@ -333,6 +333,14 @@ section {
 	padding: 0;
 	cursor: pointer;
 
+	&_w-335 {
+		width: 335px;
+
+		@include media(xs) {
+			width: 100%;
+		}
+	}
+
 	&__text {
 		position: relative;
 		z-index: 2;
@@ -400,6 +408,12 @@ section {
 	padding: 0;
 	cursor: pointer;
 
+	&_w100-xs {
+		@include media(xs) {
+			width: 100%;
+		}
+	}
+
 	&__text {
 		position: relative;
 		z-index: 2;
@@ -409,6 +423,10 @@ section {
 		line-height: 16px;
 		letter-spacing: 1.68px;
 		color: #ffffff;
+
+		&_upper {
+			text-transform: uppercase;
+		}
 	}
 
 	&::after {

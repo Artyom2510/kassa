@@ -1,0 +1,385 @@
+.partners {
+	display: block;
+	height: 528px;
+	padding-top: 120px;
+	overflow: hidden;
+
+	@include media(md) {
+		height: 295px;
+		padding-top: 40px;
+	}
+
+	@include media(sm) {
+		height: 287px;
+		padding-top: 32px;
+	}
+
+	@include media(xs) {
+		height: 402px;
+		padding-top: 150px;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: #f3f3f3;
+	}
+
+	&__poster {
+		position: absolute;
+		z-index: 1;
+		top: -80px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: block;
+		width: auto;
+		height: 1098px;
+
+		&:nth-of-type(1) {
+			@include media(xs) {
+				display: none;
+			}
+		}
+
+		&:nth-of-type(2) {
+			display: none;
+
+			@include media(xs) {
+				display: block;
+			}
+		}
+
+		@include media(xl) {
+			height: 1018px;
+		}
+
+		@include media(lg) {
+			height: 921px;
+		}
+
+		@include media(md) {
+			height: 647px;
+		}
+
+		@include media(sm) {
+			height: 597px;
+		}
+
+		@include media(xs) {
+			height: 482px;
+			left: 46%;
+		}
+	}
+}
+
+.bacame {
+	display: block;
+	max-width: 486px;
+	width: 100%;
+
+	&__title,
+	&__desc,
+	&__btn {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__title {
+		margin-bottom: 32px;
+
+		@include media(sm) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__desc {
+		margin-bottom: 32px;
+
+		@include media(sm) {
+			margin-bottom: 24px;
+		}
+	}
+}
+
+.partner-logos {
+	@include media(xs) {
+		padding-bottom: 130px;
+	}
+
+	.slick-list {
+		margin: 0 -12px;
+
+		@include media(md) {
+			margin: 0;
+		}
+	}
+
+	&__slider {
+		position: relative;
+		margin-bottom: 128px;
+
+		@include media(sm) {
+			margin-bottom: 64px;
+			padding: 0 15px;
+		}
+	}
+
+	&__decor-img {
+		position: absolute;
+		bottom: -60px;
+		left: calc(#{_col(2, xxl)} + 24px);
+		display: block;
+		width: 66px;
+		height: 66px;
+
+		@include media(xl) {
+			left: calc(#{_col(2, xl)} + 24px);
+		}
+
+		@include media(lg) {
+			left: calc(#{_col(2, lg)} + 24px);
+		}
+
+		@include media(md) {
+			left: calc(#{_col(1, md)} + 48px);
+		}
+
+		@include media(sm) {
+			bottom: -66px;
+			left: calc(#{_col(1, sm)} + 24px);
+		}
+
+		@include media(xs) {
+			bottom: -130px;
+			left: _col(6, xs);
+		}
+	}
+}
+
+.parter-slider {
+	@include media(md) {
+		.slick-slide {
+			div:first-child {
+				margin-bottom: 32px;
+			}
+		}
+	}
+
+	@include media(xs) {
+		.slick-slide {
+			div:first-child {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	&__item {
+		padding: 0 12px;
+		outline: none !important;
+	}
+
+	&__item-wrap {
+		position: relative;
+		@include aspect-ratio(568, 144);
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: 50% 50%;
+		}
+	}
+
+	&__prev,
+	&__next {
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		display: block;
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		background-color: #fff;
+		border: none;
+		outline: none !important;
+		cursor: pointer;
+
+		@include media(xl) {
+			width: 30px;
+			height: 30px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			display: block;
+			width: 12px;
+			height: 12px;
+			border-bottom: 2px solid $textBtn;
+
+			@include media(xl) {
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+
+	&__prev {
+		left: 0;
+		transform: translate(calc(-100% - 12px), -50%);
+
+		@include media(md) {
+			transform: translate(-100%, -50%);
+		}
+
+		@include media(sm) {
+			transform: translate(-50%, -50%);
+		}
+
+		&::before {
+			left: 60%;
+			border-left: 2px solid $textBtn;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+	}
+
+	&__next {
+		right: 0;
+		transform: translate(calc(100% + 12px), -50%);
+
+		@include media(md) {
+			transform: translate(100%, -50%);
+		}
+
+		@include media(sm) {
+			transform: translate(50%, -50%);
+		}
+
+		&::before {
+			left: 40%;
+			border-right: 2px solid $textBtn;
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+}
+
+.sect-map {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 128px 0;
+
+	@include media(lg) {
+		padding: 64px 0 0;
+	}
+
+	&__left {
+		position: relative;
+		z-index: 2;
+
+		@include media(xxl) {
+			width: calc((100% - #{_col(12, xxl)}) / 2 + #{_col(9, xxl)} - 12px);
+		}
+
+		@include media(xl) {
+			width: calc((100% - #{_col(12, xl)}) / 2 + #{_col(9, xl)} - 12px);
+		}
+
+		@include media(lg) {
+			width: calc((100% - #{_col(12, lg)}) / 2 + #{_col(9, lg)} - 12px);
+		}
+
+		@include media(md) {
+			width: calc(100% - 24px);
+			margin-bottom: 32px;
+		}
+
+		@include media(xs) {
+			margin-bottom: 64px;
+		}
+	}
+
+	&__container {
+		position: absolute;
+		top: 128px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include media(lg) {
+			top: 64px;
+		}
+
+		@include media(md) {
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translateX(0);
+		}
+	}
+
+	&__right {
+		@include media-only(xxl) {
+			padding-left: 60px;
+		}
+
+		@include media(sm) {
+			padding-left: 48px;
+		}
+
+		@include media(xs) {
+			padding-left: 0;
+		}
+	}
+
+	&__icon {
+		margin-bottom: 32px;
+
+		@include media(md) {
+			margin-bottom: 24px;
+		}
+
+		@include media(sm) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__content {
+		color: $kassaBg;
+
+		@include media(md) {
+			max-width: 346px;
+			margin-left: _col(1, md);
+		}
+
+		@include media(sm) {
+			margin-left: calc(#{_col(1, md)} - 8px);
+		}
+
+		@include media(xs) {
+			margin-left: calc(#{_col(2, xs)} + 12px);
+		}
+	}
+}
+
+.map {
+	width: 100%;
+	height: 664px;
+
+	@include media(md) {
+		height: 588px;
+	}
+
+	@include media(xs) {
+		height: 724px;
+	}
+}
