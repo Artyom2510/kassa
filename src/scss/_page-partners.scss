@@ -163,6 +163,22 @@
 }
 
 .parter-slider {
+	@include media(md) {
+		.slick-slide {
+			div:first-child {
+				margin-bottom: 32px;
+			}
+		}
+	}
+
+	@include media(xs) {
+		.slick-slide {
+			div:first-child {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
 	&__item {
 		padding: 0 12px;
 		outline: none !important;
