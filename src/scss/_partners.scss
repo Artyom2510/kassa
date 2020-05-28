@@ -108,6 +108,10 @@
 }
 
 .partner-logos {
+	@include media(xs) {
+		padding-bottom: 130px;
+	}
+
 	.slick-list {
 		margin: 0 -12px;
 
@@ -123,6 +127,37 @@
 		@include media(sm) {
 			margin-bottom: 64px;
 			padding: 0 15px;
+		}
+	}
+
+	&__decor-img {
+		position: absolute;
+		bottom: -60px;
+		left: calc(#{_col(2, xxl)} + 24px);
+		display: block;
+		width: 66px;
+		height: 66px;
+
+		@include media(xl) {
+			left: calc(#{_col(2, xl)} + 24px);
+		}
+
+		@include media(lg) {
+			left: calc(#{_col(2, lg)} + 24px);
+		}
+
+		@include media(md) {
+			left: calc(#{_col(1, md)} + 48px);
+		}
+
+		@include media(sm) {
+			bottom: -66px;
+			left: calc(#{_col(1, sm)} + 24px);
+		}
+
+		@include media(xs) {
+			bottom: -130px;
+			left: _col(6, xs);
 		}
 	}
 }

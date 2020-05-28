@@ -408,6 +408,12 @@ section {
 	padding: 0;
 	cursor: pointer;
 
+	&_w100-xs {
+		@include media(xs) {
+			width: 100%;
+		}
+	}
+
 	&__text {
 		position: relative;
 		z-index: 2;

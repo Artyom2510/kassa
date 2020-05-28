@@ -1717,4 +1717,11 @@
 			margin-bottom: 24px;
 		}
 	}
+
+	&__got-to {
+		@include media(xs) {
+			display: flex;
+			margin-left: auto;
+		}
+	}
 }
