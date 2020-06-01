@@ -44,10 +44,21 @@
 	padding-top: 32px;
 	padding-left: 64px;
 
+	@include media(xs) {
+		padding-top: 16px;
+		padding-left: 18px;
+	}
+
 	&__head {
 		margin-bottom: 16px;
 		&:last-child {
 			margin-bottom: 0;
+		}
+
+		&_third-lv {
+			@include media(xs) {
+				margin-bottom: 8px;
+			}
 		}
 	}
 }
@@ -91,6 +102,10 @@
 		outline: none !important;
 		cursor: pointer;
 
+		@include media(xs) {
+			padding: 0 40px 0 0;
+		}
+
 		&:before,
 		&::after {
 			content: "";
@@ -100,18 +115,18 @@
 		}
 
 		&::before {
-			top: 18px;
+			top: 19px;
 			right: 0;
-			width: 24px;
+			width: 22px;
 			height: 2px;
 			transition: background-color 0.2s ease;
 		}
 
 		&::after {
-			top: 7px;
+			top: 9px;
 			right: 10px;
 			width: 2px;
-			height: 24px;
+			height: 22px;
 			opacity: 1;
 			transition: opacity 0.3s ease;
 		}
@@ -121,9 +136,13 @@
 		display: none;
 		padding-top: 15px;
 		padding-left: 24px;
+
+		@include media(xs) {
+			padding-left: 18px;
+		}
+
 		p {
 			margin-bottom: 15px;
-			padding-left: 24px;
 			color: $text2;
 			&:last-child {
 				margin-bottom: 0;
@@ -157,6 +176,7 @@
 	}
 
 	&__block-cards {
+		position: relative;
 		display: block;
 		margin-bottom: 64px;
 
@@ -199,6 +219,7 @@
 		}
 
 		@include media(xs) {
+			position: relative;
 			margin-bottom: 32px;
 			padding-right: 20px;
 			pointer-events: all;
@@ -273,12 +294,6 @@
 		}
 	}
 
-	&:hover,
-	&:focus,
-	&:active {
-		text-decoration: none;
-	}
-
 	&::before {
 		content: "";
 		position: absolute;
@@ -289,6 +304,17 @@
 		height: 0;
 		border-top: solid 32px #bebfbe;
 		border-right: solid 32px #f2f2f2;
+		transition: border-color 0.2s ease-in;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+
+		&::before {
+			border-top: solid 32px $ac;
+		}
 	}
 
 	&__prev {
