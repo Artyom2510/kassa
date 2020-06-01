@@ -713,11 +713,34 @@
 		}
 
 		@include media(xs) {
-			width: 744px;
 			margin-left: 0;
 			margin-right: 0;
 			padding-left: 6px;
 			padding-right: 6px;
+		}
+
+		&_1 {
+			justify-content: center;
+
+			@include media(xs) {
+				width: 244px + 12px;
+			}
+		}
+
+		&_2 {
+			justify-content: center;
+
+			@include media(xs) {
+				width: 244px * 2 + 12px;
+			}
+		}
+
+		@for $i from 3 through 10 {
+			&_#{$i} {
+				@include media(xs) {
+					width: 244px * $i + 12px;
+				}
+			}
 		}
 	}
 
@@ -935,6 +958,10 @@
 			path {
 				stroke: #000;
 			}
+		}
+
+		@include media(xs) {
+			display: none;
 		}
 	}
 
