@@ -1,6 +1,6 @@
-(function ($) {
-	'use strict';
+'use strict';
 
+(function ($) {
 	var SwitchPopup = window.SwitchPopup || {};
 
 	SwitchPopup = (function () {
