@@ -1,5 +1,61 @@
 'use strict';
 
+var Price = window.Price || {};
+
+/* eslint-disable-next-line */
+Price = (function () {
+	/* eslint-disable-next-line */
+	function Price(element) {
+		var _ = this;
+		_.$price = $(element);
+		_.init();
+	}
+	return Price;
+})();
+
+Price.prototype.init = function () {
+	var _ = this;
+	_.$price.on('DOMNodeInserted', function () {
+		_.update();
+	});
+
+	_.update();
+};
+
+Price.prototype.update = function () {
+	var _ = this;
+	if (_.$price.text().indexOf(' ') === -1) {
+		var resultArr = [];
+		var reverseTextArr = _.$price.text().split('').reverse();
+		for (var i = 0; i < reverseTextArr.length; i++) {
+			resultArr.push(reverseTextArr[i]);
+			if ((i + 1) % 3 === 0) {
+				resultArr.push(' ');
+			}
+		}
+		_.$price.text(resultArr.reverse().join(''));
+	}
+};
+
+$.fn.price = function () {
+	var _ = this;
+	var opt = arguments[0];
+	var args = Array.prototype.slice.call(arguments, 1);
+	var l = _.length;
+	var i;
+	var ret;
+
+	for (i = 0; i < l; i++) {
+		if (typeof opt === 'object' || typeof opt === 'undefined') {
+			_[i].price = new Price(_[i], opt);
+		} else {
+			ret = _[i].price[opt].apply(_[i].price, args);
+		}
+		if (typeof ret !== 'undefined') return ret;
+	}
+	return _;
+};
+
 $(function () {
 	var imgSvgArray = {};
 
@@ -164,14 +220,24 @@ $(function () {
 
 	// Добавляю пробелы в цене
 	$('.js-price').each(function (index, el) {
-		var resultArr = [];
-		var reverseTextArr = $(el).text().split('').reverse();
-		for (var i = 0; i < reverseTextArr.length; i++) {
-			resultArr.push(reverseTextArr[i]);
-			if ((i + 1) % 3 === 0) {
-				resultArr.push(' ');
-			}
+		$(el).price();
+	});
+
+	// Аккордион
+	$('.accordion__btn').on('click', function () {
+		var $item = $(this).parents('.accordion__item');
+
+		if ($item.hasClass('accordion__item_open')) {
+			$item.removeClass('accordion__item_open');
+		} else {
+			$item.addClass('accordion__item_open');
 		}
-		$(el).text(resultArr.reverse().join(''));
+	});
+
+	// На мобильном по умолчанию все аккордины закрыты
+	$(document).ready(function () {
+		if ($(window).width() < 768) {
+			$('.accordion__item').removeClass('accordion__item_open');
+		}
 	});
 });
