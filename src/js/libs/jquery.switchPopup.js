@@ -9,6 +9,7 @@
 
 			_.$popup = $(element);
 			_.state = 'close';
+			_.pageScrollClass = 'html';
 			_.btnClass = '';
 			_.duration = 300;
 			_.overflow = true;
@@ -38,7 +39,7 @@
 			_.$popup.trigger('afterChange', [_.$popup, 'open']);
 		}, _.duration);
 		if (_.overflow) {
-			$('html').css({
+			$(_.pageScrollClass).css({
 				paddingRight: _.scrollwidth,
 				overflow: 'hidden'
 			});
@@ -57,7 +58,7 @@
 			_.$popup.trigger('afterClose', [_.$popup]);
 			_.$popup.trigger('afterChange', [_.$popup, 'close']);
 			if (_.overflow) {
-				$('html').css({
+				$(_.pageScrollClass).css({
 					paddingRight: 0,
 					overflow: 'auto'
 				});

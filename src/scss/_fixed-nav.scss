@@ -1,0 +1,105 @@
+.fixed-nav-menu {
+	position: sticky;
+	z-index: 10;
+	left: calc((100% - #{_col(12, xxl)}) / 2 + 12px);
+	top: 50%;
+	transform: translateY(-50%);
+	display: block;
+	width: calc(#{_col(2, xxl)} - 24px);
+	padding: 12px 0;
+	background-color: transparent;
+	transition: transform 0.3s ease-in;
+
+	@include media(xl) {
+		left: 0;
+		top: 0;
+		transform: translateY(0);
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		width: 100%;
+		max-width: _col(12, xl);
+		margin: 0 auto;
+		padding: 0;
+		background-color: #fff;
+
+		&_without-header {
+			transform: translateY(-80px);
+		}
+	}
+
+	@include media(lg) {
+		max-width: _col(12, lg);
+	}
+
+	@include media(md) {
+		max-width: _col(12, md);
+	}
+
+	@include media(sm) {
+		max-width: _col(12, sm);
+	}
+
+	@include media(xs) {
+		display: none;
+	}
+
+	&__btn {
+		position: relative;
+		display: block;
+		margin-bottom: 24px;
+		padding: 0 16px;
+		font-family: "HalvarBreitCY", sans-serif;
+		font-size: 12px;
+		line-height: 1.2;
+		color: $text2;
+		border: none;
+		text-align: left;
+		text-transform: uppercase;
+		background-color: transparent;
+		outline: none !important;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 3px;
+			left: 0;
+			display: block;
+			width: 8px;
+			height: 8px;
+			background-color: transparent;
+			transition: background-color 0.2s ease;
+		}
+
+		&_active {
+			&::before {
+				background-color: $ac;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include media(xl) {
+			padding: 8px 16px;
+			margin-bottom: 0;
+			margin-right: 20px;
+
+			&::before {
+				top: 11px;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		@include media(sm) {
+			max-width: 244px;
+			margin-right: 24px;
+			padding-right: 0;
+		}
+	}
+}

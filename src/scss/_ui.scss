@@ -886,3 +886,14 @@ h5 {
 		outline: none !important;
 	}
 }
+
+.main {
+	&__wraper {
+		position: relative;
+		// margin-top: -280px;
+	}
+}
+
+div[data-forh-element="grid"] {
+	transform: translateX(calc(var(--scroll-width) / 2 * -1));
+}
