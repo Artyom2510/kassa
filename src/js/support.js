@@ -25,19 +25,6 @@ $(function () {
 	var fixedMenu = $('.js-fixed-nav');
 	var currentSect;
 	var anchor;
-	// var mainWraper = $('.js-wraper');
-	// var mainWraperHeight;
-	// var wHeight;
-
-	// $(document).ready(function () {
-	// 	mainWraperHeight = mainWraper.outerHeight(true);
-	// 	wHeight = $(window).height() / 1.5;
-	// });
-
-	// $(window).on('resize', function () {
-	// 	mainWraperHeight = mainWraper.outerHeight(true);
-	// 	wHeight = $(window).height() / 1.5;
-	// });
 
 	btnFixedMenu.on('click', function () {
 		if (!$(this).hasClass('fixed-nav-menu__btn_active')) {
@@ -51,11 +38,7 @@ $(function () {
 	root.on('scroll', function () {
 		if ($(window).width() > 767) {
 			var windscroll = root.scrollTop();
-			// if (windscroll >= mainWraperHeight - wHeight) {
-			// 	fixedMenu.css('position', 'absolute');
-			// } else
 			if (windscroll >= 100) {
-				// fixedMenu.css('position', 'fixed');
 				$('.js-sect-top').each(function (i) {
 					if ($(this).position().top <= windscroll) {
 						$('.js-fixed-btn.fixed-nav-menu__btn_active').removeClass(
@@ -65,7 +48,6 @@ $(function () {
 					}
 				});
 			} else {
-				// fixedMenu.css('position', 'absolute');
 				$('.js-fixed-btn.fixed-nav-menu__btn_active').removeClass(
 					'fixed-nav-menu__btn_active'
 				);
