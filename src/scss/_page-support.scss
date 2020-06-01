@@ -100,18 +100,18 @@
 		}
 
 		&::before {
-			top: 18px;
+			top: 20px;
 			right: 0;
-			width: 24px;
+			width: 22px;
 			height: 2px;
 			transition: background-color 0.2s ease;
 		}
 
 		&::after {
-			top: 7px;
+			top: 10px;
 			right: 10px;
 			width: 2px;
-			height: 24px;
+			height: 22px;
 			opacity: 1;
 			transition: opacity 0.3s ease;
 		}
@@ -273,12 +273,6 @@
 		}
 	}
 
-	&:hover,
-	&:focus,
-	&:active {
-		text-decoration: none;
-	}
-
 	&::before {
 		content: "";
 		position: absolute;
@@ -289,6 +283,17 @@
 		height: 0;
 		border-top: solid 32px #bebfbe;
 		border-right: solid 32px #f2f2f2;
+		transition: border-color 0.2s ease-in;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+
+		&::before {
+			border-top: solid 32px $ac;
+		}
 	}
 
 	&__prev {
