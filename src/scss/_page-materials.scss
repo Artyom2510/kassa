@@ -1,0 +1,51 @@
+.materials-sect {
+	&__list {
+		margin-bottom: -64px;
+
+		@include media(md) {
+			margin-bottom: -32px;
+		}
+	}
+
+	&__item {
+		margin-bottom: 64px;
+
+		@include media(md) {
+			margin-bottom: 32px;
+		}
+	}
+}
+
+.material-block {
+	&__top {
+		display: block;
+	}
+
+	&__wrap {
+		padding: 48px 24px 24px;
+		background-color: #f6f6f6;
+	}
+
+	&__title {
+		margin-bottom: 24px;
+	}
+
+	&__desc {
+		margin-bottom: 16px;
+		height: 77px;
+		overflow: hidden;
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__dataphone-icon,
+	&__download {
+		display: block;
+		width: 32px;
+		height: 32px;
+	}
+}
