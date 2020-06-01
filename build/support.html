@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>Техподдержка</title>
+
+	<link rel="shortcut icon" href="favicon/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+
+	<link rel="stylesheet" href="css/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<script src="js/libs/jquery-3.2.1.min.js"></script>
+	<script src="js/libs/jquery.smoothscroll.min.js"></script>
+	<script src="js/libs/jquery.switchPopup.min.js"></script>
+	<script src="js/common.min.js"></script>
+	<script src="js/support.min.js"></script>
+</head>
+
+<body>
+	<div class="root">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<div class="logo">
+						<a href="#" class="logo__main">
+							<img src="img/Header/logo.svg" alt="Dataphone">
+						</a>
+
+						<div class="logo__line"></div>
+
+						<div class="logo__product">
+							<img src="img/Header/product-1.png" alt="Sunmi">
+						</div>
+					</div>
+				</div>
+
+				<div class="header__menu">
+					<div class="menu">
+						<div class="menu__burger-btn">
+							<button class="btn-burger js-tgl-menu">
+								<span class="btn-burger__line btn-burger__line_1"></span>
+								<span class="btn-burger__line btn-burger__line_2"></span>
+							</button>
+						</div>
+
+						<div class="menu__products-btn">
+							<button class="btn-products js-tgl-products-preview">
+								<img src="img/Header/products-device.svg" alt="device" class="btn-products__icon btn-products__icon_1">
+								<img src="img/Header/products-close.svg" alt="close" class="btn-products__icon btn-products__icon_2">
+								<span class="btn-products__text">Продукты</span>
+							</button>
+						</div>
+
+						<div class="menu__wrap">
+							<span class="menu__title-md">Меню</span>
+
+							<div class="menu__products-preview">
+								<div class="products-preview">
+									<h3 class="products-preview__title-md">Продукты</h3>
+									<ul class="products-preview__list">
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img
+													src="img/Header/products/1.png"
+													srcset="img/Header/products/1@2x.png 2x, img/Header/products/1@3x.png 3x"
+													alt="ККТ MSPOS-D-Ф"
+													class="products-preview__img"
+												>
+												<span class="products-preview__desc">ККТ MSPOS-D-Ф</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img
+													src="img/Header/products/2.png"
+													srcset="img/Header/products/2@2x.png 2x, img/Header/products/2@3x.png 3x"
+													alt="Sunmi p2 lite"
+													class="products-preview__img"
+												>
+												<span class="products-preview__desc">Sunmi p2 lite</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img
+													src="img/Header/products/3.png"
+													srcset="img/Header/products/3@2x.png 2x, img/Header/products/3@3x.png 3x"
+													alt="ККТ MSPOS-e-Ф"
+													class="products-preview__img"
+												>
+												<span class="products-preview__desc">ККТ MSPOS-e-Ф</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img
+													src="img/Header/products/4.png"
+													srcset="img/Header/products/4@2x.png 2x, img/Header/products/4@3x.png 3x"
+													alt="Аксессуары"
+													class="products-preview__img"
+												>
+												<span class="products-preview__desc">Аксессуары</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<nav class="menu__nav navigation">
+								<ul class="navigation__list">
+									<li class="navigation__item">
+										<a href="#" class="navigation__link">Эквайринг</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link navigation__link_active">Партнерам</a>
+									</li>
+									<li class="navigation__item">
+										<a href="#" class="navigation__link">Техподдержка</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link">Оплата и доставка</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="main">
+
+			<!-- Обвёртка для меню -->
+			<div class="main__wraper js-wraper">
+
+				<!-- Фиксированное меню -->
+				<nav class="fixed-nav-menu js-fixed-nav">
+					<button class="fixed-nav-menu__btn fixed-nav-menu__btn_active js-fixed-btn" data-anchor="question">Часто задаваемые вопросы</button>
+					<button class="fixed-nav-menu__btn js-fixed-btn" data-anchor="recommendations">Рекомендации по работе с устройствоми</button>
+					<button class="fixed-nav-menu__btn js-fixed-btn" data-anchor="video">Видеоинструкции</button>
+				</nav>
+
+				<!-- Часто задаваемые вопросы -->
+				<section class="support-sect js-sect-top" data-anchor="question">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<h1 class="support-sect__title h1">Техподдержка</h1>
+							</div>
+
+							<div class="col-12 col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
+								<div class="full-block-questions js-parent">
+
+									<div class="full-block-questions__head head-question">
+										<button class="head-question__btn h3 js-btn-question">Часто задаваемые вопросы</button>
+									</div>
+
+									<div class="full-block-questions__hidden hidden-questions js-body">
+										<div class="hidden-questions__head head-question js-parent">
+											<button class="head-question__btn h3 js-btn-question">Вопрос 1</button>
+											<div class="head-question__answer js-body">
+												<p>Исключительное качество материалов. Пос терминал выполнен из прочных сплавов пластика, а вес данной кассы составляет всего 430гр. Поддерживает все виды оплаты, считывает карты с магнитной полосой, IC-карты, NFC, QR-коды оплаты.</p>
+											</div>
+										</div>
+										<div class="hidden-questions__head head-question js-parent">
+											<button class="head-question__btn h3 js-btn-question">Вопрос 2</button>
+											<div class="head-question__answer js-body">
+												<p>Исключительное качество материалов. Пос терминал выполнен из прочных сплавов пластика, а вес данной кассы составляет всего 430гр. Поддерживает все виды оплаты, считывает карты с магнитной полосой, IC-карты, NFC, QR-коды оплаты.</p>
+												<p>Исключительное качество материалов. Пос терминал выполнен из прочных сплавов пластика, а вес данной кассы составляет всего 430гр. Поддерживает все виды оплаты, считывает карты с магнитной полосой, IC-карты, NFC, QR-коды оплаты.</p>
+											</div>
+										</div>
+										<div class="hidden-questions__head head-question js-parent">
+											<button class="head-question__btn h3 js-btn-question">Вопрос 3</button>
+											<div class="head-question__answer js-body">
+												<div class="hidden-questions__head head-question head-question_third-lv js-parent">
+													<button class="head-question__btn h5 js-btn-question">Подвопрос 1</button>
+													<div class="head-question__answer js-body">
+														<p>Исключительное качество материалов. Пос терминал выполнен из прочных сплавов пластика, а вес данной кассы составляет всего 430гр. Поддерживает все виды оплаты, считывает карты с магнитной полосой, IC-карты, NFC, QR-коды оплаты.</p>
+													</div>
+												</div>
+												<div class="hidden-questions__head head-question head-question_third-lv js-parent">
+													<button class="head-question__btn h5 js-btn-question">Подвопрос 2</button>
+													<div class="head-question__answer js-body">
+														<p>Исключительное качество материалов. Пос терминал выполнен из прочных сплавов пластика, а вес данной кассы составляет всего 430гр. Поддерживает все виды оплаты, считывает карты с магнитной полосой, IC-карты, NFC, QR-коды оплаты.</p>
+													</div>
+												</div>
+												<div class="hidden-questions__head head-question head-question_third-lv js-parent">
+													<button class="head-question__btn h5 js-btn-question">Подвопрос 3</button>
+													<div class="head-question__answer js-body">
+														<p>Исключительное качество материалов. Пос терминал выполнен из прочных сплавов пластика, а вес данной кассы составляет всего 430гр. Поддерживает все виды оплаты, считывает карты с магнитной полосой, IC-карты, NFC, QR-коды оплаты.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Рекомендации -->
+				<section class="recommendations-sect js-sect-top" data-anchor="recommendations">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
+								<h2 class="recommendations-sect__title h2">Рекомендации по работе с устройствоми <span>dataphone</span></h2>
+
+								<div class="recommendations-sect__block-cards">
+									<button class="recommendations-sect__subtitle h3 js-xs-slidedown">Работа с терминалом</button>
+
+									<!-- Карточки -->
+									<div class="recommendations-sect__cards">
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Начало работы</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Запуск кассы</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Регистрация Аккаунта</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Главное меню кассы</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Переход в настройки</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Работа в личном кабинете</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Синхронизация с системой 1С</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Актуальные версии приложений</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Эквайриг</p>
+										</a>
+
+									</div>
+								</div>
+
+								<div class="recommendations-sect__block-cards">
+									<button class="recommendations-sect__subtitle h3 js-xs-slidedown">Работа с заказами</button>
+
+									<div class="recommendations-sect__cards">
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Продажа товара из базы товаров</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Как отложить заказ отложенные заказы</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Единицы измерения, Продажа весового товара</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Как пробить чек</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Как оплатить товар двумя и более способами</p>
+										</a>
+
+									</div>
+								</div>
+
+								<div class="recommendations-sect__block-cards">
+									<button class="recommendations-sect__subtitle h3 js-xs-slidedown">Работа c api</button>
+
+									<div class="recommendations-sect__cards">
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Публичное API Кассы</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">API для облачной интеграции с сервисом</p>
+										</a>
+
+									</div>
+								</div>
+
+								<div class="recommendations-sect__block-cards">
+									<button class="recommendations-sect__subtitle h3 js-xs-slidedown">Фискализация</button>
+
+									<div class="recommendations-sect__cards">
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Фискализация</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Фискализация чеков для курьеров/транспорта</p>
+										</a>
+
+										<a href="#" class="recommendations-sect__card support-card">
+											<img src="img/ui-icon/dataphone-icon2.svg" alt="" class="support-card__prev">
+											<p class="support-card__text h4">Фискализация чеков для Интернет-магазинов</p>
+										</a>
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Рекомендации -->
+				<section class="video-instruction-sect js-sect-top" data-anchor="video">
+
+					<div class="container">
+						<div class="row">
+							<div class="col-12 col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
+								<h2 class="video-instruction-sect__title h2">Видеоинструкции</h2>
+
+								<div class="video-instruction-sect__cards">
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/B6zi-fu90uU">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/OiLdgNA6hlM">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/B6zi-fu90uU">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/B6zi-fu90uU">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/OiLdgNA6hlM">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/B6zi-fu90uU">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/B6zi-fu90uU">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/OiLdgNA6hlM">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+									<button class="video-instruction-sect__card video-card js-open-video" data-link="https://www.youtube.com/embed/B6zi-fu90uU">
+										<img src="content/support/zaglushka.png" alt="" class="video-card__poster">
+										<div class="video-card__play-icon">
+											<img src="img/ui-icon/play.svg" alt="" class="img-svg">
+										</div>
+									</button>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</section>
+			</div>
+
+			<section class="sect-help">
+				<div class="container">
+					<h2 class="sect-help__title h2">Нужна помощь? </h2>
+
+					<div class="sect-help__desc b-content">
+						<p>Отправьте заявку, и менеджер перезвонит вам в ближайшее время</p>
+					</div>
+
+					<div class="sect-help__btn">
+						<button class="btn-ac">
+							<span class="btn-ac__text">Оставить заявку</span>
+						</button>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Попап видео -->
+		<div class="popup-video">
+			<div class="popup-video__bg js-tgl-video"></div>
+			<div class="popup-video__wrap">
+				<button class="popup-video__close js-tgl-video">
+					<img src="img/ui-icon/close.svg" alt="" class="img-svg">
+				</button>
+				<div class="popup-video__wrap-iframe js-parent-iframe-link">
+					<iframe src="" width="100%" height="680" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" muted autoplay playsinline loop allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__top">
+					<div class="row">
+						<div class="col-sm-4 col-xl-4 offset-xl-1">
+							<h3 class="footer__question h3">Остались вопросы?</h3>
+						</div>
+						<div class="col-sm-4 col-xl-4">
+							<a href="tel:84951084131" class="footer__phone h3">+7 495 108-41-31</a>
+						</div>
+						<div class="col-sm-4 col-xl-3">
+							<a href="mailto:hello@dataphone.com" class="footer__email h3">hello@dataphone.com</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xl-11 offset-xl-1">
+						<div class="footer__hr"></div>
+					</div>
+				</div>
+
+				<div class="footer__bottom">
+					<div class="row">
+						<div class="col-xl-11 offset-xl-1">
+							<div class="footer__links">
+								<a href="#">Политика конфиденциальности</a>
+								<a href="#">Пользовательское соглашение</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+</body>
+</html>
