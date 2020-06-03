@@ -355,6 +355,10 @@ h5 {
 		}
 	}
 
+	&_md-145 {
+		width: 145px;
+	}
+
 	&__text {
 		position: relative;
 		z-index: 2;
@@ -581,6 +585,41 @@ h5 {
 			&::after {
 				width: 8px;
 				background-color: $ac;
+			}
+		}
+	}
+
+	&_white {
+		width: 163px;
+
+		#{$p}__text {
+			color: #fff;
+		}
+
+		#{$p}__arrow {
+			path {
+				stroke: #fff;
+			}
+		}
+
+		&:not(:disabled) {
+			&:hover,
+			&:focus {
+				&::after {
+					background-color: #fff;
+				}
+			}
+
+			&:focus {
+				#{$p}__text {
+					color: #fff;
+				}
+			}
+
+			&:active {
+				&::after {
+					background-color: $ac;
+				}
 			}
 		}
 	}
@@ -890,7 +929,6 @@ h5 {
 .main {
 	&__wraper {
 		position: relative;
-		// margin-top: -280px;
 	}
 }
 
