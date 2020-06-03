@@ -9,10 +9,13 @@ $(function () {
 	var parent;
 	var childSl;
 
+	// Поправка на отступ
+	var padding = 24;
+
 	$(document).ready(function () {
 		slGoods.each(function () {
 			scrollW = $(this)[0].scrollWidth;
-			width = Math.floor(scrollW - $(this).outerWidth(true));
+			width = Math.floor(scrollW - $(this).outerWidth(true) - padding);
 			$(this).data('width', width);
 		});
 	});
@@ -20,7 +23,7 @@ $(function () {
 	$(window).on('resize', function () {
 		slGoods.each(function () {
 			scrollW = $(this)[0].scrollWidth;
-			width = Math.floor(scrollW - $(this).outerWidth(true));
+			width = Math.floor(scrollW - $(this).outerWidth(true) - padding);
 			$(this).attr('data-width', width);
 		});
 	});
