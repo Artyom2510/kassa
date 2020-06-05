@@ -265,6 +265,7 @@
 }
 
 .support-card {
+	$p: &;
 	display: block;
 	width: calc(33.33% - 50px);
 	padding: 40px 24px 20px;
@@ -315,6 +316,10 @@
 		&::before {
 			border-top: solid 32px $ac;
 		}
+
+		#{$p}__text {
+			color: $textBtn;
+		}
 	}
 
 	&__prev {
@@ -333,6 +338,7 @@
 		min-height: 76px;
 		color: $text2;
 		text-align: center;
+		transition: color 0.2s ease-in;
 
 		@include media(md) {
 			min-height: 85px;
