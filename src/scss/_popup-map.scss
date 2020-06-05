@@ -55,6 +55,7 @@
 			width: 16px;
 			height: 2px;
 			background-color: #bebfbe;
+			transition: background-color 0.2s ease-in;
 		}
 
 		&::before {
@@ -63,6 +64,15 @@
 
 		&::after {
 			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			&::before,
+			&::after {
+				background-color: $textBtn;
+			}
 		}
 	}
 
