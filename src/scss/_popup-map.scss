@@ -54,7 +54,7 @@
 			display: block;
 			width: 16px;
 			height: 2px;
-			background-color: #bebfbe;
+			background-color: $grayText;
 			transition: background-color 0.2s ease-in;
 		}
 
@@ -111,7 +111,7 @@
 			font-size: 12px;
 			line-height: 1.2;
 			font-weight: 400;
-			color: #bebfbe;
+			color: $grayText;
 		}
 
 		p {
