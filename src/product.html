@@ -595,7 +595,14 @@
 										<ul class="ps14-props__list">
 											<li class="ps14-props__item">
 												<div class="checked-dop">
-													<input id="prop-1" name="prop" type="radio" value="0" class="checked-dop__input js-product-props" checked>
+													<input
+														id="prop-1"
+														name="prop"
+														type="radio"
+														value="0"
+														class="checked-dop__input js-product-props"
+														checked
+													>
 													<label for="prop-1" class="checked-dop__label">
 														<img src="img/ui-icon/checked-dop-flag.svg" class="checked-dop__flag img-svg">
 														<span class="checked-dop__desc">без ФН</span>
@@ -604,7 +611,13 @@
 											</li>
 											<li class="ps14-props__item">
 												<div class="checked-dop">
-													<input id="prop-2" name="prop" type="radio" value="7000" class="checked-dop__input js-product-props">
+													<input
+														id="prop-2"
+														name="prop"
+														type="radio"
+														value="7000"
+														class="checked-dop__input js-product-props"
+													>
 													<label for="prop-2" class="checked-dop__label">
 														<img src="img/ui-icon/checked-dop-flag.svg" class="checked-dop__flag img-svg">
 														<img src="img/product/ps13.png" class="checked-dop__img">
@@ -615,7 +628,13 @@
 											</li>
 											<li class="ps14-props__item">
 												<div class="checked-dop">
-													<input id="prop-3" name="prop" type="radio" value="10000" class="checked-dop__input js-product-props">
+													<input
+														id="prop-3"
+														name="prop"
+														type="radio"
+														value="10000"
+														class="checked-dop__input js-product-props"
+													>
 													<label for="prop-3" class="checked-dop__label">
 														<img src="img/ui-icon/checked-dop-flag.svg" class="checked-dop__flag img-svg">
 														<img
@@ -635,7 +654,7 @@
 												<h2 class="h2"><span class="js-price js-product-price" data-start="20000">20000</span>р.</h2>
 											</div>
 											<div class="ps14-props__buy">
-												<button class="btn-ac">
+												<button class="btn-ac js-tgl-popup-product">
 													<span class="btn-ac__text">Заказать</span>
 												</button>
 											</div>
@@ -828,7 +847,7 @@
 					</div>
 
 					<div class="sect-help__btn">
-						<button class="btn-ac">
+						<button class="btn-ac js-tgl-popup-buy">
 							<span class="btn-ac__text">Оставить заявку</span>
 						</button>
 					</div>
@@ -870,6 +889,171 @@
 				</div>
 			</div>
 		</footer>
+	</div>
+
+	<div class="popup-buy">
+		<div class="popup-buy__bg js-tgl-popup-buy"></div>
+
+		<div class="popup-buy__content">
+			<div class="popup-buy__overlay js-tgl-popup-buy"></div>
+
+			<div class="popup-buy__wrap">
+				<form action="/" method="POST" class="popup-buy-wrap popup-buy-wrap_type_1">
+					<button class="popup-buy-wrap__close js-tgl-popup-buy" type="button">
+						<img src="img/ui-icon/close.svg" alt="close" class="img-svg">
+					</button>
+
+					<div class="popup-buy-wrap__content popup-buy-wrap__content_display popup-buy-wrap__content_visible">
+						<h3 class="popup-buy-wrap__title">Заказать</h3>
+
+						<div class="popup-buy-wrap__fullname">
+							<div class="formfield">
+								<input name="fullname" type="text" class="formfield__input" id="fullname">
+								<label for="fullname" class="formfield__label">ФИО</label>
+							</div>
+						</div>
+
+						<div class="popup-buy-wrap__email">
+							<div class="formfield">
+								<input name="email" type="email" class="formfield__input" id="email">
+								<label for="email" class="formfield__label">E-Mail</label>
+							</div>
+						</div>
+
+						<div class="popup-buy-wrap__phone">
+							<div class="formfield">
+								<input name="tel" type="tel" class="formfield__input" id="phone">
+								<label for="phone" class="formfield__label">Телефон</label>
+							</div>
+						</div>
+
+						<div class="popup-buy-wrap__message">
+							<div class="textarea-spoiler">
+								<div class="textarea-spoiler__head">
+									<button class="textarea-spoiler__toggle" type="button">
+										<span class="link">оставить сообщение</span>
+										<img src="img/ui-icon/btn-link-arrow.svg" class="img-svg">
+									</button>
+								</div>
+								<div class="textarea-spoiler__body" style="display: none;">
+									<div class="formfield formfield_textarea">
+										<textarea name="message" class="formfield__textarea" placeholder="Текст..."></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="popup-buy-wrap__submit">
+							<button class="btn-ac" type="submit">
+								<span class="btn-ac__text">Заказать</span>
+							</button>
+						</div>
+
+						<div class="popup-buy-wrap__politconf">
+							<div class="formcheck">
+								<input type="checkbox" name="politconf" id="politconf-buy" class="formcheck__input" checked>
+								<label for="politconf-buy" class="formcheck__label">Даю согласие на обработку персональных данных, а также соглашаюсь с <a href="#" target="_blank">Политикой конфиденциальности</a></label>
+							</div>
+						</div>
+					</div>
+
+					<div class="popup-buy-wrap__end popup-buy-wrap__end_hide">
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="popup-product">
+		<div class="popup-product__bg js-tgl-popup-product"></div>
+
+		<div class="popup-product__content">
+			<div class="popup-product__overlay js-tgl-popup-product"></div>
+
+			<div class="popup-product__wrap">
+				<form action="/" method="POST" class="popup-product-wrap popup-product-wrap_type_1">
+					<button class="popup-product-wrap__close js-tgl-popup-product" type="button">
+						<img src="img/ui-icon/close.svg" alt="close" class="img-svg">
+					</button>
+
+					<div class="popup-product-wrap__content popup-product-wrap__content_display popup-product-wrap__content_visible">
+						<h3 class="popup-product-wrap__title">Заказать</h3>
+
+						<div class="popup-product-wrap__device">
+							<div class="popup-product-device">
+								<input type="hidden" name="id" value="0" class="popup-product-device__input">
+								<input type="hidden" name="additionalId" value="0" class="popup-product-device__input popup-product-device__input_additional">
+								<div class="popup-product-device__left">
+									<span>ККТ MSPOS-D-Ф</span>
+									<span><span class="js-price">20000</span> руб.</span>
+								</div>
+								<img src="img/product/ps11-1.png" class="popup-product-device__img">
+								<div class="popup-product-device__right">
+									<span>ФН 1.1 15 мес.</span>
+									<span>+ <span class="js-price">7000</span> руб.</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="popup-product-wrap__fullname">
+							<div class="formfield">
+								<input name="fullname" type="text" class="formfield__input" id="fullname-product">
+								<label for="fullname-product" class="formfield__label">ФИО</label>
+							</div>
+						</div>
+
+						<div class="popup-product-wrap__email">
+							<div class="formfield">
+								<input name="email" type="email" class="formfield__input" id="email-product">
+								<label for="email-product" class="formfield__label">E-Mail</label>
+							</div>
+						</div>
+
+						<div class="popup-product-wrap__phone">
+							<div class="formfield">
+								<input name="tel" type="tel" class="formfield__input" id="phone-product">
+								<label for="phone-product" class="formfield__label">Телефон</label>
+							</div>
+						</div>
+
+						<div class="popup-product-wrap__message">
+							<div class="textarea-spoiler">
+								<div class="textarea-spoiler__head">
+									<button class="textarea-spoiler__toggle" type="button">
+										<span class="link">оставить сообщение</span>
+										<img src="img/ui-icon/btn-link-arrow.svg" class="img-svg">
+									</button>
+								</div>
+								<div class="textarea-spoiler__body" style="display: none;">
+									<div class="formfield formfield_textarea">
+										<textarea name="message" class="formfield__textarea" placeholder="Текст..."></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="popup-product-wrap__submit">
+							<button class="btn-ac" type="submit">
+								<span class="btn-ac__text">Заказать</span>
+							</button>
+						</div>
+
+						<div class="popup-product-wrap__politconf">
+							<div class="formcheck">
+								<input type="checkbox" name="politconf" id="politconf-product" class="formcheck__input" checked>
+								<label for="politconf-product" class="formcheck__label">Даю согласие на обработку персональных данных, а также соглашаюсь с <a href="#" target="_blank">Политикой конфиденциальности</a></label>
+							</div>
+						</div>
+					</div>
+
+					<div class="popup-product-wrap__end popup-product-wrap__end_hide">
+
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
