@@ -207,8 +207,8 @@
 			display: none;
 			width: 12px;
 			height: 12px;
-			border-right: 2px solid #bebfbe;
-			border-bottom: 2px solid #bebfbe;
+			border-right: 2px solid $grayText;
+			border-bottom: 2px solid $grayText;
 		}
 
 		&_open {
@@ -303,7 +303,7 @@
 		display: block;
 		width: 0;
 		height: 0;
-		border-top: solid 32px #bebfbe;
+		border-top: solid 32px $grayText;
 		border-right: solid 32px #f2f2f2;
 		transition: border-color 0.2s ease-in;
 	}
@@ -495,7 +495,7 @@
 					fill: transparent;
 				}
 				&:last-child {
-					fill: #bebfbe;
+					fill: $grayText;
 				}
 			}
 		}

@@ -282,6 +282,45 @@
 			}
 		}
 	}
+
+	&_acquiring {
+		margin: 0;
+
+		#{$p}__item {
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			@include media(md) {
+				&_google,
+				&_apple,
+				&_samsung,
+				&_mir,
+				&_visa,
+				&_emvco,
+				&_mastercard {
+					#{$p}__img {
+						width: auto;
+						height: auto;
+					}
+				}
+			}
+
+			@include media(xxs) {
+				&_google,
+				&_apple,
+				&_samsung,
+				&_mir,
+				&_visa,
+				&_emvco,
+				&_mastercard {
+					#{$p}__img {
+						height: 29px;
+					}
+				}
+			}
+		}
+	}
 }
 
 .hs1-center {
@@ -420,7 +459,7 @@
 			top: 56px;
 			left: 50%;
 			transform: translate(-50%, 0);
-			color: #bebfbe;
+			color: $grayText;
 			transition: all 0.3s ease-in;
 
 			sup {
@@ -949,7 +988,7 @@
 
 		circle,
 		path {
-			stroke: #bebfbe;
+			stroke: $grayText;
 			transition: all 0.3s ease-in;
 		}
 
@@ -1477,7 +1516,7 @@
 
 	&__card {
 		position: relative;
-		background-color: #bebfbe;
+		background-color: $grayText;
 
 		/* stylelint-disable-next-line */
 		img {
@@ -1655,7 +1694,7 @@
 .home-sect-9 {
 	&__title {
 		text-align: center;
-		color: #bebfbe;
+		color: $grayText;
 	}
 }
 

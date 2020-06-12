@@ -623,6 +623,10 @@ h5 {
 			}
 		}
 	}
+
+	&_more {
+		width: 163px;
+	}
 }
 
 // Элементы форм
@@ -647,7 +651,7 @@ h5 {
 		font-size: 28px;
 		line-height: 1.2;
 		font-weight: 500;
-		color: #bebfbe;
+		color: $grayText;
 		transition: all 0.3s ease-in;
 		cursor: text;
 
@@ -824,7 +828,7 @@ h5 {
 			+ #{$p}__label {
 				&:hover {
 					&::before {
-						background-color: #bebfbe;
+						background-color: $grayText;
 					}
 				}
 			}
@@ -833,7 +837,7 @@ h5 {
 				/* stylelint-disable-next-line */
 				+ #{$p}__label {
 					&::before {
-						background-color: #bebfbe;
+						background-color: $grayText;
 						border-color: #727272;
 					}
 				}

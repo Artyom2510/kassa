@@ -86,7 +86,7 @@ $(function () {
 		popupVideo.switchPopup('open');
 	});
 
-	// Пауза
+	// Стоп видео
 	popupVideo.on('beforeClose', function () {
 		$(this)
 			.find('iframe')[0]
