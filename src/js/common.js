@@ -240,4 +240,231 @@ $(function () {
 			$('.accordion__item').removeClass('accordion__item_open');
 		}
 	});
+
+	/* Обработка форм (отключение возможности отправки при неактивном инпуте) */
+	$('form').each(function (id, form) {
+		var $checkboxes = $(form).find('input[type="checkbox"]');
+		var $submit = $(form).find('button[type="submit"]');
+		var $politconf;
+		$checkboxes.each(function (checkId, checkbox) {
+			if (checkbox.id.toLowerCase().indexOf('politconf') !== -1) {
+				$politconf = $(checkbox);
+			}
+		});
+
+		if ($politconf && $politconf.length && $submit && $submit.length) {
+			$submit.attr('disabled', !$politconf[0].checked);
+			$politconf.on('change', function () {
+				$submit.attr('disabled', !$politconf[0].checked);
+			});
+		}
+	});
+
+	$('.textarea-spoiler__toggle').on('click', function () {
+		var $parent = $(this).parents('.textarea-spoiler');
+
+		if ($parent.hasClass('textarea-spoiler_open')) {
+			$parent.removeClass('textarea-spoiler_open');
+			$parent.children('.textarea-spoiler__body').slideUp();
+		} else {
+			$parent.addClass('textarea-spoiler_open');
+			$parent.children('.textarea-spoiler__body').slideDown();
+		}
+	});
+
+	$('.popup-buy').switchPopup({
+		pageScrollClass: 'root',
+		btnClass: 'js-tgl-popup-buy',
+		displayClass: 'popup-buy_display',
+		visibleClass: 'popup-buy_visible',
+		duration: 300
+	});
+
+	$('.popup-buy-wrap__content').switchPopup({
+		displayClass: 'popup-buy-wrap__content_display',
+		visibleClass: 'popup-buy-wrap__content_visible',
+		duration: 200
+	});
+
+	$('.popup-buy-wrap__end').switchPopup({
+		displayClass: 'popup-buy-wrap__end_display',
+		visibleClass: 'popup-buy-wrap__end_visible',
+		duration: 200
+	});
+
+	$('.popup-buy').on('afterClose', function () {
+		if ($('.popup-buy-wrap').hasClass('popup-buy-wrap_success')) {
+			$('.popup-buy-wrap__content').switchPopup('open');
+			$('.popup-buy-wrap__end').switchPopup('close');
+			$('.popup-buy-wrap').removeClass('popup-buy-wrap_success');
+			$('.popup-buy-wrap').css('height', '');
+		}
+	});
+
+	// Форма из попапа
+	$('.popup-buy-wrap').on('submit', function (e) {
+		e.preventDefault();
+		var $form = $(this);
+		var formData = new FormData(this);
+
+		var csrfParam = $('meta[name="csrf-param"]').attr('content');
+		var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+		formData[csrfParam] = csrfToken;
+
+		$.ajax({
+			url: $form.attr('action'),
+			method: $form.attr('method'),
+			async: false,
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function (res) {
+				var data = JSON.parse(res);
+
+				if (data.success) {
+					$('.popup-buy-wrap__content').switchPopup('close');
+					var height = $('.popup-buy-wrap').css('height');
+					$('.popup-buy-wrap').css('height', height);
+					setTimeout(function () {
+						$('.popup-buy-wrap').animate(
+							{
+								height: '80px'
+							},
+							500
+						);
+					}, 200);
+
+					setTimeout(function () {
+						$('.popup-buy-wrap').addClass('popup-buy-wrap_success');
+					}, 700);
+
+					setTimeout(function () {
+						$('.popup-buy-wrap__end').switchPopup('open');
+					}, 1000);
+
+					setTimeout(function () {
+						$('.popup-buy').switchPopup('close');
+					}, 3000);
+				} else {
+					$('.formfield').each(function (i, el) {
+						$(el).removeClass('.formfield_error');
+						$(el).children('.formfield__msg').remove();
+					});
+
+					if (typeof data.message === 'object') {
+						Object.keys(data.message).forEach(function (inputName) {
+							var $ff = $form
+								.find('[name="' + inputName + '"]')
+								.parent('.formfield');
+							$ff.addClass('formfield_error');
+							$ff.append(
+								'<span class="formfield__msg">' +
+									data.message[inputName] +
+									'</span>'
+							);
+						});
+					}
+				}
+			}
+		});
+	});
+
+	$('.popup-product').switchPopup({
+		pageScrollClass: 'root',
+		btnClass: 'js-tgl-popup-product',
+		displayClass: 'popup-product_display',
+		visibleClass: 'popup-product_visible',
+		duration: 300
+	});
+
+	$('.popup-product-wrap__content').switchPopup({
+		displayClass: 'popup-product-wrap__content_display',
+		visibleClass: 'popup-product-wrap__content_visible',
+		duration: 200
+	});
+
+	$('.popup-product-wrap__end').switchPopup({
+		displayClass: 'popup-product-wrap__end_display',
+		visibleClass: 'popup-product-wrap__end_visible',
+		duration: 200
+	});
+
+	$('.popup-product').on('afterClose', function () {
+		if ($('.popup-product-wrap').hasClass('popup-product-wrap_success')) {
+			$('.popup-product-wrap__content').switchPopup('open');
+			$('.popup-product-wrap__end').switchPopup('close');
+			$('.popup-product-wrap').removeClass('popup-product-wrap_success');
+			$('.popup-product-wrap').css('height', '');
+		}
+	});
+
+	// Форма из попапа
+	$('.popup-product-wrap').on('submit', function (e) {
+		e.preventDefault();
+		var $form = $(this);
+		var formData = new FormData(this);
+
+		var csrfParam = $('meta[name="csrf-param"]').attr('content');
+		var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+		formData[csrfParam] = csrfToken;
+
+		$.ajax({
+			url: $form.attr('action'),
+			method: $form.attr('method'),
+			async: false,
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function (res) {
+				var data = JSON.parse(res);
+
+				if (data.success) {
+					$('.popup-product-wrap__content').switchPopup('close');
+					var height = $('.popup-product-wrap').css('height');
+					$('.popup-product-wrap').css('height', height);
+					setTimeout(function () {
+						$('.popup-product-wrap').animate(
+							{
+								height: '80px'
+							},
+							500
+						);
+					}, 200);
+
+					setTimeout(function () {
+						$('.popup-product-wrap').addClass('popup-product-wrap_success');
+					}, 700);
+
+					setTimeout(function () {
+						$('.popup-product-wrap__end').switchPopup('open');
+					}, 1000);
+
+					setTimeout(function () {
+						$('.popup-product').switchPopup('close');
+					}, 3000);
+				} else {
+					$('.formfield').each(function (i, el) {
+						$(el).removeClass('.formfield_error');
+						$(el).children('.formfield__msg').remove();
+					});
+
+					if (typeof data.message === 'object') {
+						Object.keys(data.message).forEach(function (inputName) {
+							var $ff = $form
+								.find('[name="' + inputName + '"]')
+								.parent('.formfield');
+							$ff.addClass('formfield_error');
+							$ff.append(
+								'<span class="formfield__msg">' +
+									data.message[inputName] +
+									'</span>'
+							);
+						});
+					}
+				}
+			}
+		});
+	});
 });
