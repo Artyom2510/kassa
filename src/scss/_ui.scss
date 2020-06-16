@@ -88,15 +88,46 @@ h5 {
 
 .b-content {
 	> p {
-		margin-bottom: 16px;
+		margin: 0 0 16px;
+		color: $textBtn;
+
+		&.mb-24 {
+			margin-bottom: 24px;
+		}
+
+		/* stylelint-disable-next-line no-descending-specificity */
+		& + h4 {
+			margin: 64px 0;
+
+			@include media(md) {
+				margin: 32px 0;
+			}
+		}
+
+		& + ul,	/* stylelint-disable-line no-descending-specificity */
+		& + ol {
+			margin-top: 24px;
+			margin-bottom: 64px;
+		}
 	}
 
 	// Нумерованый список
+	/* stylelint-disable-next-line no-descending-specificity */
 	ol {
 		counter-reset: list;
 		margin: 0;
 		padding: 0;
 		list-style: none;
+
+		& + h3,
+		& + h4 {
+			margin-top: 128px;
+			margin-bottom: 32px;
+
+			@include media(md) {
+				margin-top: 64px;
+			}
+		}
 
 		li {
 			position: relative;
@@ -105,6 +136,7 @@ h5 {
 			min-height: 32px;
 			margin-bottom: 24px;
 			padding-left: 64px;
+			color: $kassaBg;
 
 			&::before {
 				position: absolute;
@@ -136,10 +168,17 @@ h5 {
 	}
 
 	// Маркированый список
+	/* stylelint-disable-next-line no-descending-specificity */
 	ul {
 		margin: 0;
 		padding: 0;
 		list-style: none;
+
+		& + h3,
+		& + h4 {
+			margin-top: 128px;
+			margin-bottom: 32px;
+		}
 
 		/* stylelint-disable-next-line */
 		li {
@@ -149,6 +188,7 @@ h5 {
 			min-height: 18px;
 			margin-bottom: 24px;
 			padding-left: 34px;
+			color: $kassaBg;
 
 			/* stylelint-disable-next-line */
 			&::before {
@@ -167,6 +207,17 @@ h5 {
 				margin-bottom: 0;
 			}
 		}
+	}
+
+	/* stylelint-disable-next-line no-descending-specificity */
+	h3 /* stylelint-disable-line no-descending-specificity */,
+	h4 {
+		margin: 0 0 32px;
+	}
+
+	/* stylelint-disable-next-line no-descending-specificity */
+	h3 {
+		color: #262626;
 	}
 
 	> *:last-child {
