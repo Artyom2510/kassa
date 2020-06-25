@@ -14,6 +14,10 @@
 		padding: 6px 0;
 	}
 
+	&_transparent {
+		background-color: transparent;
+	}
+
 	&_hide {
 		transform: translateY(-100%);
 	}
