@@ -947,7 +947,24 @@ h5 {
 }
 
 .dataphone {
+	position: relative;
 	color: $ac;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 92px;
+		height: 92px;
+		@include dataphone-box();
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: -18px;
+
+		@include media(xs) {
+			display: none;
+		}
+	}
 }
 
 // tooltip

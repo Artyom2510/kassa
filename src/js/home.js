@@ -1,6 +1,48 @@
 'use strict';
 
 $(function () {
+	// 3D pluses
+	function closeAll3Dpopup() {
+		for (var j = 1; j < 9; j++) {
+			if ($('.hs1-popup_' + j).hasClass('hs1-popup_visible')) {
+				$('.hs1-popup_' + j).switchPopup('close');
+				$('.js-tgl-plus-' + j).removeClass('hs1-center__plus_active');
+			}
+		}
+	}
+
+	for (var i = 1; i < 9; i++) {
+		$('.hs1-popup_' + i).switchPopup({
+			pageScrollClass: 'root',
+			btnClass: 'js-tgl-plus-' + i,
+			displayClass: 'hs1-popup_display',
+			visibleClass: 'hs1-popup_visible',
+			duration: 200,
+			overflow: false
+		});
+
+		$('.js-tgl-plus-' + i).on('click', function () {
+			if (!$(this).hasClass('hs1-center__plus_active')) {
+				closeAll3Dpopup();
+				$(this).addClass('hs1-center__plus_active');
+			} else {
+				$(this).removeClass('hs1-center__plus_active');
+			}
+
+			var idx = $(this).index() + 1;
+			var pos = $(this)[0].getBoundingClientRect();
+			var posCenter = $('.home-sect-1__center')[0].getBoundingClientRect();
+			var top = pos.top - posCenter.top - 131;
+			var left = pos.left - posCenter.left + 36;
+
+			$('.hs1-popup_' + idx).css({
+				top: top + 'px',
+				left: left + 'px'
+			});
+		});
+	}
+
+	// 3D model
 	var events = [];
 	var firstXcoords = -1;
 	var firstYcoords = -1;
@@ -66,9 +108,11 @@ $(function () {
 						Math.floor((events[0].clientX - firstXcoords) / sliderStep)
 					);
 					$('.hs1-center__item').removeClass('hs1-center__item_active');
-					$('.hs1-center__item:nth-child(' + (onlineSlide + 1) + ')').addClass(
+					$('.hs1-center__item:nth-child(' + (onlineSlide + 2) + ')').addClass(
 						'hs1-center__item_active'
 					);
+					$('.hs1-center__slider').attr('data-slider', onlineSlide);
+					closeAll3Dpopup();
 					// тут менять активный слайд
 				}
 				/* Движение в лево */
@@ -78,9 +122,12 @@ $(function () {
 						Math.floor((firstXcoords - events[0].clientX) / sliderStep)
 					);
 					$('.hs1-center__item').removeClass('hs1-center__item_active');
-					$('.hs1-center__item:nth-child(' + (onlineSlide + 1) + ')').addClass(
+					$('.hs1-center__item:nth-child(' + (onlineSlide + 2) + ')').addClass(
 						'hs1-center__item_active'
 					);
+					$('.hs1-center__slider').attr('data-slider', onlineSlide);
+
+					closeAll3Dpopup();
 					// тут менять активный слайд
 				}
 			}
@@ -135,7 +182,7 @@ $(function () {
 		initSlider3D();
 	});
 
-	var $sliderCards = $('.hs7-slider__cards').slick({
+	$('.hs7-slider__cards').slick({
 		infinite: true,
 		dots: false,
 		arrows: false,
@@ -145,7 +192,8 @@ $(function () {
 		centerPadding: '0px',
 		draggable: false,
 		swipe: false,
-		accessibility: false
+		accessibility: false,
+		initialSlide: 3
 	});
 
 	var $sliderTexts = $('.hs7-slider__texts').slick({
@@ -158,16 +206,16 @@ $(function () {
 		draggable: false,
 		swipe: false,
 		accessibility: false,
-		fade: true
+		fade: true,
+		asNavFor: '.hs7-slider__cards',
+		initialSlide: 3
 	});
 
 	$('.hs7-slider__arrow.hs7-slider__arrow_left').on('click', function () {
-		$sliderCards.slick('slickPrev');
-		$sliderTexts.slick('slickPrev');
+		$sliderTexts.slick('slickNext');
 	});
 
 	$('.hs7-slider__arrow.hs7-slider__arrow_right').on('click', function () {
-		$sliderCards.slick('slickNext');
-		$sliderTexts.slick('slickNext');
+		$sliderTexts.slick('slickPrev');
 	});
 });

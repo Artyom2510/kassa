@@ -203,6 +203,7 @@ $(function () {
 
 	var st = $('.root').scrollTop();
 	var prevScroll = st;
+	var isHeaderTransparent = $('.header').hasClass('header_transparent');
 	$('.root').on('scroll', function () {
 		st = $('.root').scrollTop();
 		if (prevScroll > st) {
@@ -213,6 +214,13 @@ $(function () {
 			if (st > 100) {
 				$('.header').addClass('header_hide');
 				$('.menu__products-preview').switchPopup('close');
+			}
+		}
+		if (isHeaderTransparent) {
+			if (!$('.header').hasClass('header_transparent') && st < 100) {
+				$('.header').addClass('header_transparent');
+			} else {
+				$('.header').removeClass('header_transparent');
 			}
 		}
 		prevScroll = st;

@@ -7,6 +7,12 @@
 	/* stylelint-disable-next-line */
 	height: calc(var(--vh, 1vh) * 100);
 	padding-top: 80px;
+
+	&_no {
+		&_pt {
+			padding-top: 0;
+		}
+	}
 }
 
 .sect-help {
@@ -25,6 +31,10 @@
 
 	&__btn {
 		text-align: center;
+
+		button {
+			width: 335px;
+		}
 
 		@include media(xs) {
 			button {
