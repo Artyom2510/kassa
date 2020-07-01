@@ -55,12 +55,12 @@
 	}
 
 	&__logo {
-		max-width: 233px;
-		flex: 0 0 233px;
+		max-width: 250px;
+		flex: 0 0 250px;
 
 		@include media(xxs) {
-			max-width: 209px;
-			flex: 0 0 209px;
+			max-width: 223px;
+			flex: 0 0 223px;
 		}
 	}
 
@@ -88,16 +88,22 @@
 	align-items: center;
 
 	&__main {
-		width: 136px;
+		width: 164px;
 		height: auto;
 
 		@include media(xxs) {
 			width: 122px;
 		}
+
+		img,
+		svg {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	&__line {
-		margin: 0 9px;
+		margin: 0 4px;
 		width: 1px;
 		height: 14px;
 		background-color: #000000;
