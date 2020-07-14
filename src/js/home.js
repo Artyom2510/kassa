@@ -182,7 +182,7 @@ $(function () {
 		initSlider3D();
 	});
 
-	$('.hs7-slider__cards').slick({
+	var $sliderCard = $('.hs7-slider__cards').slick({
 		infinite: true,
 		dots: false,
 		arrows: false,
@@ -193,7 +193,7 @@ $(function () {
 		draggable: false,
 		swipe: false,
 		accessibility: false,
-		initialSlide: 3
+		initialSlide: 0
 	});
 
 	var $sliderTexts = $('.hs7-slider__texts').slick({
@@ -207,15 +207,16 @@ $(function () {
 		swipe: false,
 		accessibility: false,
 		fade: true,
-		asNavFor: '.hs7-slider__cards',
 		initialSlide: 3
 	});
 
 	$('.hs7-slider__arrow.hs7-slider__arrow_left').on('click', function () {
 		$sliderTexts.slick('slickNext');
+		$sliderCard.slick('slickNext');
 	});
 
 	$('.hs7-slider__arrow.hs7-slider__arrow_right').on('click', function () {
 		$sliderTexts.slick('slickPrev');
+		$sliderCard.slick('slickPrev');
 	});
 });
