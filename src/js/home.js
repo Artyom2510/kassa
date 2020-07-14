@@ -80,6 +80,7 @@ $(function () {
 	}
 
 	function pointermoveHandler(e) {
+		// eslint-disable-next-line
 		for (var i = 0; i < events.length; i++) {
 			if (e.pointerId === events[i].pointerId) {
 				events[i] = e;
@@ -137,6 +138,7 @@ $(function () {
 	}
 
 	function pointerupHandler(e) {
+		// eslint-disable-next-line
 		for (var i = 0; i < events.length; i++) {
 			if (events[i].pointerId === e.pointerId) {
 				events.splice(i, 1);
