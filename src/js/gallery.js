@@ -1,8 +1,6 @@
 'use strict';
 
 $(function () {
-	var root = $('.root');
-
 	/* Инициализация лайтбокса */
 	if ($('[data-lightbox]').length) {
 		lightbox.option({
@@ -13,8 +11,4 @@ $(function () {
 			disableScrolling: true
 		});
 	}
-
-	// root.on('scroll', function() {
-
-	// });
 });
