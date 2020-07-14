@@ -2537,9 +2537,9 @@
 		}
 
 		@include media(sm) {
-			max-width: #{$colWidthMd * 3};
-			flex: 0 0 #{$colWidthMd * 3};
-			margin-right: calc(50vw - (var(--scroll-width) / 2) + 24px);
+			max-width: #{$colWidthMd * 4};
+			flex: 0 0 #{$colWidthMd * 4};
+			margin-right: calc(50vw - #{$colWidthMd / 2} - (var(--scroll-width) / 2));
 		}
 
 		@include media(xs) {
@@ -2625,6 +2625,11 @@
 	}
 
 	&__text {
+		/* stylelint-disable-next-line */
+		> h4 {
+			color: #ffffff;
+		}
+
 		/* stylelint-disable-next-line */
 		> p {
 			color: #ffffff;

@@ -97,6 +97,7 @@ h5 {
 		}
 	}
 
+	/* stylelint-disable-next-line */
 	.img-wrap {
 		position: relative;
 		display: block;
@@ -283,17 +284,16 @@ h5 {
 		}
 	}
 
-	/* stylelint-disable-next-line no-descending-specificity */
-	h1,
-	h2,
-	h3,
-	h4 {
+	/* stylelint-disable */
+	// prettier-ignore
+	h1, h2, h3, h4 {
 		display: block;
 		line-height: 1.2;
 		font-family: "HalvarBreitCY", sans-serif;
 		font-weight: 500;
 		color: $textBtn;
 	}
+	/* stylelint-enable */
 
 	/* stylelint-disable-next-line no-descending-specificity */
 	h5,
@@ -302,6 +302,7 @@ h5 {
 		font-weight: 900;
 		line-height: 1;
 	}
+
 	/* stylelint-disable-next-line no-descending-specificity */
 	h1 {
 		margin: 0 0 128px;
@@ -326,6 +327,7 @@ h5 {
 			margin-bottom: 64px;
 		}
 	}
+
 	/* stylelint-disable-next-line no-descending-specificity */
 	h3 {
 		margin: 0 0 24px;
