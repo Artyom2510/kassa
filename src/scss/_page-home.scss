@@ -2806,12 +2806,6 @@
 		}
 	}
 
-	&__right {
-		@include media-up(lg) {
-			padding-top: 32px;
-		}
-	}
-
 	&__img {
 		position: relative;
 		@include aspect-ratio(498, 198);

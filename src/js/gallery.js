@@ -3,6 +3,7 @@
 $(function () {
 	/* Инициализация лайтбокса */
 	if ($('[data-lightbox]').length) {
+		// eslint-disable-next-line
 		lightbox.option({
 			alwaysShowNavOnTouchDevices: true,
 			resizeDuration: 0,

@@ -825,7 +825,7 @@
 	padding: 232px 0;
 
 	@include media(xl) {
-		padding-bottom: 116px;
+		padding-bottom: 128px;
 	}
 
 	@include media(lg) {
@@ -833,16 +833,12 @@
 	}
 
 	@include media(md) {
-		padding-top: 214px;
+		padding-top: 128px;
 		padding-bottom: 64px;
 	}
 
 	@include media(sm) {
-		padding-top: 124px;
-	}
-
-	@include media(xs) {
-		padding-top: 64px;
+		padding-top: 104px;
 	}
 
 	&__goods {
@@ -903,42 +899,9 @@
 	&__parent {
 		display: flex;
 		flex-wrap: nowrap;
-		padding-top: 46px;
 
 		@include media(sm) {
 			padding-right: 24px;
-		}
-
-		@include media(xs) {
-			padding-top: 0;
-			margin-top: -42px;
-		}
-	}
-
-	&__decor-title {
-		position: absolute;
-		z-index: 0;
-		top: 0;
-		left: calc(#{_col(2, xxl)} + 12px);
-		display: block;
-		width: calc(#{_col(8, xxl)} - 24px);
-		height: auto;
-		pointer-events: none;
-
-		@include media(xl) {
-			left: 64px;
-			width: calc(#{_col(12, xl)} - 128px);
-		}
-
-		@include media(lg) {
-			width: calc(100% - 24px);
-			left: 12px;
-		}
-
-		@include media(xs) {
-			position: relative;
-			width: auto;
-			height: 92px;
 		}
 	}
 
