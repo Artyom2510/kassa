@@ -13,3 +13,7 @@
 @include font-face("GothamPro", "#{$url-font}/GothamPro-Medium/GothamPro-Medium", "ttf") {
 	font-weight: 500;
 }
+
+@include font-face("GothamPro", "#{$url-font}/GothamPro-Black/GothamPro-Black", "ttf") {
+	font-weight: 900;
+}

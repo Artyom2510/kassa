@@ -1,4 +1,4 @@
-@import '../vars';
+@import "../vars";
 
 html.lb-disable-scrolling {
 	overflow: hidden;
@@ -11,7 +11,7 @@ html.lb-disable-scrolling {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 9999;
+	z-index: 99;
 	background-color: #000;
 	opacity: 0.8;
 	display: none;
@@ -21,8 +21,8 @@ html.lb-disable-scrolling {
 	position: absolute;
 	left: 0;
 	width: 100%;
-	height: calc(100vh - 100px);
-	z-index: 10000;
+	height: 100vh;
+	z-index: 100;
 	text-align: center;
 	line-height: 0;
 	font-weight: 400;
@@ -32,6 +32,10 @@ html.lb-disable-scrolling {
 		height: auto;
 		max-width: inherit;
 		max-height: none;
+
+		@include media(xs) {
+			max-width: 80vw;
+		}
 	}
 
 	a img {
@@ -68,7 +72,7 @@ html.lb-disable-scrolling {
 	width: 32px;
 	height: 32px;
 	margin: 0 auto;
-	background: url('../images/loading.gif') no-repeat;
+	background: url("#{$url-img-libs}/lightbox/loading.gif") no-repeat;
 }
 
 .lb-nav {
@@ -81,7 +85,7 @@ html.lb-disable-scrolling {
 
 	a {
 		outline: none;
-		background-image: url('data:image/gifbase64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+		background-image: url("data:image/gifbase64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
 
 		&.lb-prev,
 		&.lb-next {
@@ -96,7 +100,7 @@ html.lb-disable-scrolling {
 			width: 34%;
 			left: 0;
 			float: left;
-			background: url('#{$url-img}/lightbox/prev.png') left 48% no-repeat;
+			background: url("#{$url-img-libs}/lightbox/prev.png") left 48% no-repeat;
 
 			&:hover {
 				opacity: 1;
@@ -107,7 +111,7 @@ html.lb-disable-scrolling {
 			width: 64%;
 			right: 0;
 			float: right;
-			background: url('#{$url-img}/lightbox/next.png') right 48% no-repeat;
+			background: url("#{$url-img-libs}/lightbox/next.png") right 48% no-repeat;
 
 			&:hover {
 				opacity: 1;
@@ -159,12 +163,13 @@ html.lb-disable-scrolling {
 
 .lb-close {
 	position: absolute;
-	top: -40px;
-	right: 50px;
+	z-index: 10;
+	top: 100px;
+	right: 100px;
 	display: block;
 	width: 33px;
 	height: 33px;
-	background: url('#{$url-img}/lightbox/close.png') top right no-repeat;
+	background: url("#{$url-img-libs}/lightbox/close.png") top right no-repeat;
 	text-align: right;
 	outline: none;
 	opacity: 0.7;
@@ -179,15 +184,16 @@ html.lb-disable-scrolling {
 @include media(xs) {
 	.lb-nav a {
 		&.lb-prev {
-			background: url('#{$url-img}/lightbox/prev-xs.png') left 48% no-repeat;
+			background: url("#{$url-img-libs}/lightbox/prev-xs.png") left 48% no-repeat;
 		}
 
 		&.lb-next {
-			background: url('#{$url-img}/lightbox/next-xs.png') right 48% no-repeat;
+			background: url("#{$url-img-libs}/lightbox/next-xs.png") right 48% no-repeat;
 		}
 	}
 
 	.lb-close {
+		top: 20px;
 		right: 20px;
 	}
 }
