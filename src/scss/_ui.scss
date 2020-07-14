@@ -87,22 +87,57 @@ h5 {
 }
 
 .b-content {
+
+	.img-wrap {
+		position: relative;
+		display: block;
+		width: 100%;
+		@include aspect-ratio(746, 420);
+
+		@include media(xs) {
+			margin-bottom: 24px;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 50%;
+		}
+	}
+
+	&__group {
+		display: flex;
+
+		@include media(xs) {
+			flex-wrap: wrap;
+		}
+	}
+
 	> p {
 		margin: 0 0 16px;
 		color: $textBtn;
+
+		&.smaller {
+			font-size: 13px;
+		}
 
 		&.mb-24 {
 			margin-bottom: 24px;
 		}
 
 		/* stylelint-disable-next-line no-descending-specificity */
-		& + h4 {
-			margin: 64px 0;
+		// & + h4 {
+		// 	margin: 64px 0;
 
-			@include media(md) {
-				margin: 32px 0;
-			}
-		}
+		// 	@include media(md) {
+		// 		margin: 32px 0;
+		// 	}
+		// }
 
 		& + ul,	/* stylelint-disable-line no-descending-specificity */
 		& + ol {
@@ -115,9 +150,14 @@ h5 {
 	/* stylelint-disable-next-line no-descending-specificity */
 	ol {
 		counter-reset: list;
-		margin: 0;
+		margin: 0 0 32px;
 		padding: 0;
 		list-style: none;
+
+		@include media(xs) {
+			margin-bottom: 64px;
+		}
+
 
 		& + h3,
 		& + h4 {
@@ -134,7 +174,7 @@ h5 {
 			display: flex;
 			align-items: center;
 			min-height: 32px;
-			margin-bottom: 24px;
+			margin-bottom: 64px;
 			padding-left: 64px;
 			color: $kassaBg;
 
@@ -170,7 +210,7 @@ h5 {
 	// Маркированый список
 	/* stylelint-disable-next-line no-descending-specificity */
 	ul {
-		margin: 0;
+		margin: 0 0 32px;
 		padding: 0;
 		list-style: none;
 
@@ -210,17 +250,121 @@ h5 {
 	}
 
 	/* stylelint-disable-next-line no-descending-specificity */
-	h3 /* stylelint-disable-line no-descending-specificity */,
-	h4 {
-		margin: 0 0 32px;
+	h1, h2, h3, h4 {
+		display: block;
+		line-height: 1.2;
+		font-family: "HalvarBreitCY", sans-serif;
+		color: $textBtn;
 	}
 
 	/* stylelint-disable-next-line no-descending-specificity */
-	h3 {
-		color: #262626;
+	h5, h6 {
+		font-family: "GothamPro", sans-serif;
+		line-height: 1;
+		text-transform: capitalize;
+	}
+	/* stylelint-disable-next-line no-descending-specificity */
+	h1 {
+		margin: 0 0 128px;
+		width: 100%;
+		text-align: center;
+
+		@include media(xs) {
+			text-align: left;
+		}
 	}
 
-	> *:last-child {
+	/* stylelint-disable-next-line no-descending-specificity */
+	h2 {
+		margin: 0 0 32px;
+		font-size: 30px;
+
+		@include media(xs) {
+			font-size: 25px;
+		}
+
+		& + p {
+			margin-bottom: 64px;
+		}
+	}
+	/* stylelint-disable-next-line no-descending-specificity */
+	h3 {
+		margin: 0 0 24px;
+		font-size: 25px;
+
+		@include media(xs) {
+			margin-bottom: 30px;
+			font-size: 20px;
+		}
+
+		& + p {
+			margin-bottom: 40px;
+		}
+	}
+
+	/* stylelint-disable-next-line no-descending-specificity */
+	h4 {
+		margin: 0 0 16px;
+		font-size: 20px;
+
+		@include media(xs) {
+			margin-bottom: 22px;
+			font-size: 15px;
+		}
+
+		& + p {
+			margin-bottom: 32px;
+		}
+	}
+
+	/* stylelint-disable-next-line no-descending-specificity */
+	h5 {
+		margin: 0 0 16px;
+		font-size: 15px;
+
+		& + p {
+			margin-bottom: 24px;
+		}
+	}
+
+	/* stylelint-disable-next-line no-descending-specificity */
+	h6 {
+		margin: 0 0 8px;
+		font-size: 13px;
+
+		@include media(xs) {
+			font-size: 13px;
+		}
+
+		& + p {
+			margin-bottom: 16px;
+		}
+	}
+
+	blockquote {
+		position: relative;
+		display: block;
+		margin: 40px 0 24px;
+		padding: 24px 24px 24px 64px;
+		font-family: "GothamPro", sans-serif;
+		font-size: 15px;
+		line-height: 1.4;
+		color: $textBtn;
+		background-color: #f6f6f6;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			display: block;
+			width: 28px;
+			height: 28px;
+			background: url("#{$url-img}/ui-icon/quotes.svg") center no-repeat;
+		}
+	}
+
+	> *:last-child:not(:first-child) {
 		margin-bottom: 0;
 	}
 }

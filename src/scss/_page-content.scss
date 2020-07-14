@@ -1,0 +1,64 @@
+.content {
+	position: relative;
+	padding: 64px 0;
+
+	&:first-child {
+		padding-top: 128px;
+	}
+
+	&:nth-last-of-type(2) {
+		padding-bottom: 104px;
+
+		@include media(xs) {
+			padding-bottom: 64px;
+		}
+	}
+
+	&:not(:nth-last-of-type(2)) {
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%);
+			display: block;
+			width: calc(#{_col(8, xxl)} - 24px);
+			height: 1px;
+			background-color: $grayText;
+
+			@include media(xl) {
+				width: calc(#{_col(8, xl)} - 24px);
+			}
+
+			@include media(md) {
+				width: calc(#{_col(8, md)} - 24px);
+			}
+
+			@include media(sm) {
+				width: calc(#{_col(8, sm)} - 24px);
+			}
+
+			@include media(xs) {
+				width: calc(#{_col(4, xs)} - 24px);
+			}
+
+			@include media(xxs) {
+				width: calc(#{_col(4, xxs)} - 24px);
+			}
+		}
+	}
+
+	&__block {
+		margin-bottom: 128px;
+
+		@include media(xs) {
+			margin-bottom: 64px;
+		}
+	}
+
+	&__bnt-video {
+		position: relative;
+		width: 100%;
+		margin-bottom: 16px;
+	}
+}
