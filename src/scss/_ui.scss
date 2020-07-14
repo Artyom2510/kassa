@@ -87,12 +87,47 @@ h5 {
 }
 
 .b-content {
+	.image-group {
+		display: flex;
+
+		.img-wrap {
+			&:last-child {
+				margin-left: 24px;
+			}
+		}
+	}
 
 	.img-wrap {
 		position: relative;
 		display: block;
 		width: 100%;
+		margin-bottom: 128px;
 		@include aspect-ratio(746, 420);
+
+		&_vertical {
+			@include aspect-ratio(285, 567);
+			width: calc(#{_col(2, xxl)} - 24px);
+
+			@include media(xl) {
+				width: calc(#{_col(2, xl)} - 24px);
+			}
+
+			@include media(lg) {
+				width: calc(#{_col(2, lg)} - 24px);
+			}
+
+			@include media(md) {
+				width: calc(#{_col(2, md)} - 24px);
+			}
+
+			@include media(sm) {
+				width: calc(#{_col(2, sm)} - 24px);
+			}
+
+			@include media(xs) {
+				width: calc(50% - 12px);
+			}
+		}
 
 		@include media(xs) {
 			margin-bottom: 24px;
@@ -157,7 +192,6 @@ h5 {
 		@include media(xs) {
 			margin-bottom: 64px;
 		}
-
 
 		& + h3,
 		& + h4 {
@@ -250,18 +284,23 @@ h5 {
 	}
 
 	/* stylelint-disable-next-line no-descending-specificity */
-	h1, h2, h3, h4 {
+	h1,
+	h2,
+	h3,
+	h4 {
 		display: block;
 		line-height: 1.2;
 		font-family: "HalvarBreitCY", sans-serif;
+		font-weight: 500;
 		color: $textBtn;
 	}
 
 	/* stylelint-disable-next-line no-descending-specificity */
-	h5, h6 {
+	h5,
+	h6 {
 		font-family: "GothamPro", sans-serif;
+		font-weight: 900;
 		line-height: 1;
-		text-transform: capitalize;
 	}
 	/* stylelint-disable-next-line no-descending-specificity */
 	h1 {
