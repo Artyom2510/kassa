@@ -87,7 +87,7 @@ $(function () {
 	updateProductPopup();
 
 	$('.js-product-props').on('change', function () {
-		var curVal = $(this).val();
+		var curVal = $(this).parent().find('.js-price').text().replace(' ', '');
 		$('.js-product-price').each(function (idx, el) {
 			$(el).text(Number($(el).data('start')) + Number(curVal));
 		});
