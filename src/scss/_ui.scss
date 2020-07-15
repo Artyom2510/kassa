@@ -595,6 +595,12 @@ h5 {
 		width: 145px;
 	}
 
+	&_default-width {
+		@include media(xs) {
+			width: 250px;
+		}
+	}
+
 	&__text {
 		position: relative;
 		z-index: 2;
