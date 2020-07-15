@@ -303,6 +303,7 @@
 }
 
 .navigation {
+	$p: &;
 	position: relative;
 
 	&__list {
@@ -351,6 +352,14 @@
 
 			&:last-child {
 				margin-bottom: 0;
+			}
+		}
+
+		&_active {
+			#{$p}__link {
+				&::after {
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -403,12 +412,6 @@
 				top: 50%;
 				right: -16px;
 				transform: translateY(-50%);
-			}
-		}
-
-		&_active {
-			&::after {
-				opacity: 1;
 			}
 		}
 	}
