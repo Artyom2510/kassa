@@ -2014,14 +2014,19 @@
 
 // 4я секция
 .home-sect-4 {
-	&__banner {
-		width: 100%;
+	padding: 0;
+	margin-bottom: 116px;
 
-		/* stylelint-disable-next-line */
-		img {
-			width: 100%;
-			height: auto;
-		}
+	@include media(xl) {
+		margin-bottom: 172px;
+	}
+
+	@include media(lg) {
+		margin-bottom: 116px;
+	}
+
+	@include media(md) {
+		margin-bottom: 64px;
 	}
 }
 

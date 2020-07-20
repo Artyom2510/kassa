@@ -58,59 +58,132 @@
 }
 
 .sect-accessories {
-	padding-top: 32px;
 	background-color: #f6f6f6;
 
-	@include media(xs) {
-		padding-top: 24px;
-	}
-
-	&__left {
-		display: flex;
-		justify-content: center;
-	}
-
-	&__right {
+	&__new-block {
 		position: relative;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
+	}
+}
+
+.accessories-new-block {
+	display: block;
+
+	@include media(xs) {
+		padding-top: 108px;
+	}
+
+	&__wrap {
+		position: relative;
+		padding-left: 40px;
+
+		@include media(sm) {
+			padding-left: 16px;
+		}
 
 		@include media(xs) {
-			margin-bottom: 24px;
-			height: auto;
+			margin-left: 15%;
+			padding-left: 40px;
+		}
+	}
+
+	&__frame {
+		position: absolute;
+		z-index: 1;
+		bottom: 50%;
+		left: 0;
+		transform: translateY(50%);
+		display: block;
+		width: 326px;
+		height: auto;
+
+		@include media(xl) {
+			width: 272px;
+		}
+
+		@include media(lg) {
+			width: 240px;
+		}
+
+		@include media(md) {
+			width: 220px;
+		}
+
+		@include media(sm) {
+			width: 132px;
+		}
+
+		@include media(xs) {
+			left: 0;
+			bottom: 12px;
+			transform: translate(0);
+			width: 199px;
 		}
 	}
 
 	&__img {
-		width: 312px;
-		height: auto;
+		display: block;
+		width: auto;
+		height: 472px;
+
+		@include media(xl) {
+			height: 348px;
+		}
+
+		@include media(lg) {
+			height: 306px;
+		}
+
+		@include media(md) {
+			height: 252px;
+		}
 
 		@include media(sm) {
-			width: 264px;
+			height: 186px;
 		}
 
 		@include media(xs) {
-			width: 185px;
+			height: 238px;
+		}
+	}
+
+	&__choose {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		right: 46px;
+		transform: translateY(-50%);
+		display: block;
+		text-align: center;
+
+		@include media(xl) {
+			right: 31px;
 		}
 
-		@include media(xxs) {
-			width: 211px;
+		@include media(lg) {
+			right: 25px;
+		}
+
+		@include media(md) {
+			right: 31px;
+		}
+
+		@include media(sm) {
+			right: 8px;
+		}
+
+		@include media(xs) {
+			top: 0;
+			right: 50%;
+			transform: translate(50%, 0);
 		}
 	}
 
 	&__title {
+		display: block;
 		margin-bottom: 32px;
-		text-align: center;
 
 		@include media(xs) {
 			margin-bottom: 24px;
 		}
-	}
-
-	&__btn {
-		text-align: center;
 	}
 }
