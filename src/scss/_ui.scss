@@ -670,6 +670,14 @@ h5 {
 		}
 	}
 
+	&_w225 {
+		width: 225px;
+
+		@include media(xs) {
+			width: 193px;
+		}
+	}
+
 	&__text {
 		position: relative;
 		z-index: 2;
