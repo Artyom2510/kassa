@@ -571,4 +571,16 @@
 			transform: translate(0, 4.5px);
 		}
 	}
+
+	&_open {
+		#{$p}__line {
+			&_1 {
+				transform: rotate(-45deg);
+			}
+
+			&_2 {
+				transform: rotate(45deg);
+			}
+		}
+	}
 }
