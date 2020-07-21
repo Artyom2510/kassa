@@ -2452,27 +2452,6 @@
 		position: absolute;
 		z-index: 5;
 		top: 50%;
-		width: 77px;
-		height: 77px;
-		background-color: $ac;
-		border: none;
-		outline: none !important;
-		padding: 0;
-
-		@include media(lg) {
-			width: 68px;
-			height: 68px;
-		}
-
-		@include media(xs) {
-			width: 40px;
-			height: 40px;
-		}
-
-		/* stylelint-disable-next-line */
-		path {
-			stroke: #fff;
-		}
 
 		&_left {
 			right: 50%;
@@ -2493,11 +2472,6 @@
 			@include media(xs) {
 				top: 148px;
 				transform: translate(-108px, -50%);
-			}
-
-			svg {
-				transform: rotate(-180deg);
-				transform-origin: 50% 50%;
 			}
 		}
 
@@ -2521,6 +2495,52 @@
 				top: 148px;
 				transform: translate(108px, -50%);
 			}
+		}
+	}
+
+	&__next,
+	&__prev {
+		width: 77px;
+		height: 77px;
+		background-color: $ac;
+		border: solid 5px transparent;
+		outline: none !important;
+		padding: 0;
+		transition: all 0.2s ease-out;
+
+		@include media(lg) {
+			width: 68px;
+			height: 68px;
+		}
+
+		@include media(xs) {
+			width: 40px;
+			height: 40px;
+		}
+
+		&:hover {
+			transform: scale(1.129);
+		}
+
+		&:focus {
+			border-color: #c40000;
+		}
+
+		&:active {
+			background-color: #c40000;
+		}
+
+		/* stylelint-disable-next-line */
+		path {
+			stroke: #fff;
+		}
+	}
+
+	/* stylelint-disable-next-line */
+	&__prev {
+		svg {
+			transform: rotate(-180deg);
+			transform-origin: 50% 50%;
 		}
 	}
 
