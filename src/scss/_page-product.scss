@@ -742,6 +742,11 @@
 		height: 328px;
 		background-color: #f6f6f6;
 
+		&_1,
+		&_2 {
+			justify-content: center;
+		}
+
 		@include media(xs) {
 			padding: 0;
 
@@ -777,6 +782,16 @@
 	&__img {
 		width: 280px;
 		height: 280px;
+
+		@include media(md) {
+			width: 217px;
+			height: 217px;
+		}
+
+		@include media(sm) {
+			width: 132px;
+			height: 132px;
+		}
 
 		@include media(xs) {
 			width: 169px;

@@ -160,17 +160,17 @@
 
 		@include media-only(xl) {
 			width: calc((100% - #{_col(12, xl)}) / 2 + #{_col(8, xl)} - 12px);
-			height: 448px;
+			height: 480px;
 		}
 
 		@include media-only(lg) {
 			width: calc((100% - #{_col(12, lg)}) / 2 + #{_col(8, lg)} - 12px);
-			height: 448px;
+			height: 480px;
 		}
 
 		@include media-only(md) {
 			width: calc((100% - #{_col(12, md)}) / 2 + #{_col(8, md)} - 12px);
-			height: 400px;
+			height: 420px;
 		}
 
 		@include media-only(sm) {
@@ -1610,22 +1610,24 @@
 			height: auto;
 		}
 
-		@include media-only(sm) {
-			&_1,
-			&_2 {
-				align-items: flex-end;
-				padding-bottom: 12px;
-			}
+		// @include media-only(sm) {
+		// 	&_1,
+		// 	&_2 {
+		// 		align-items: flex-end;
+		// 		padding-bottom: 12px;
+		// 	}
 
-			&_3 {
-				align-items: flex-start;
-				padding-top: 12px;
-			}
-		}
+		// 	&_3 {
+		// 		align-items: flex-start;
+		// 		padding-top: 12px;
+		// 	}
+		// }
 
 		@include media(xs) {
 			&_1,
-			&_2 {
+			&_2,
+			&_3,
+			&_4 {
 				margin-bottom: 32px;
 			}
 		}
