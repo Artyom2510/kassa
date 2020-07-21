@@ -1,22 +1,22 @@
 .partners {
 	display: block;
 	height: 528px;
-	padding-top: 120px;
+	padding-top: 200px;
 	overflow: hidden;
 
 	@include media(md) {
 		height: 295px;
-		padding-top: 40px;
+		padding-top: 120px;
 	}
 
 	@include media(sm) {
 		height: 287px;
-		padding-top: 32px;
+		padding-top: 112px;
 	}
 
 	@include media(xs) {
-		height: 402px;
-		padding-top: 150px;
+		height: 482px;
+		padding-top: 130px;
 	}
 
 	&::before {
