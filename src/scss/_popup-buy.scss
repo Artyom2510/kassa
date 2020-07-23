@@ -266,7 +266,7 @@
 .popup-product-device {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 
 	&__img {
 		width: 96px;
@@ -280,10 +280,12 @@
 	&__left,
 	&__right {
 		width: 200px;
+		padding-top: 10px;
+		text-align: center;
 
 		> span {
 			display: block;
-			white-space: nowrap;
+			text-align: center;
 
 			@include media(xs) {
 				font-size: 12px;
@@ -291,16 +293,20 @@
 		}
 
 		> span:first-child {
-			margin-bottom: 24px;
+			font-size: 12px;
+			line-height: 14px;
+			height: 28px;
+			margin-bottom: 8px;
+			overflow: hidden;
 			color: #8a8b8a;
-
-			@include media(xs) {
-				margin-bottom: 16px;
-			}
 		}
 	}
 
 	&__left {
-		text-align: right;
+		img {
+			width: auto;
+			height: 24px;
+			margin-top: 2px;
+		}
 	}
 }
