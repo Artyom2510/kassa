@@ -65,22 +65,47 @@ $(function () {
 	});
 
 	function updateProductPopup() {
-		var $checked = $('.js-product-props:checked');
-		var $checkedParent = $checked.parent('.checked-dop');
-		var checkedId = $checked.val();
-		var checkedName = $checkedParent.find('.checked-dop__desc').text();
-		var checkedPrice = $checkedParent.find('.checked-dop__price').text();
+		var $productChecked = $('.js-product-props:checked');
+		var $productCheckedParent = $productChecked.parent('.checked-dop');
+		var productCheckedId = $productChecked.val();
+		var productCheckedName = $productCheckedParent
+			.find('.checked-dop__desc')
+			.text();
+		var productCheckedPrice = $productCheckedParent
+			.find('.checked-dop__price')
+			.text();
+		var $product2Checked = $('.js-product-props-2:checked');
+		var $product2CheckedParent = $product2Checked.parent('.checked-dop');
+		var product2CheckedId = $product2Checked.val();
+		var product2src = $product2CheckedParent.find('img').attr('src');
+		var product2srcset = $product2CheckedParent.find('img').attr('srcset');
+		var product2alt = $product2CheckedParent.find('img').attr('alt');
 
 		$(
 			'.popup-product-device__input.popup-product-device__input_additional'
-		).val(checkedId);
+		).val(productCheckedId);
 
-		$('.popup-product-device__right > span:first-child').text(checkedName);
+		$('.popup-product-device__right > span:first-child').text(
+			productCheckedName
+		);
 
-		if (checkedPrice) {
-			$('.popup-product-device__right > span:last-child').text(checkedPrice);
+		if (productCheckedPrice) {
+			$('.popup-product-device__right > span:last-child').text(
+				productCheckedPrice
+			);
 		} else {
 			$('.popup-product-device__right > span:last-child').text('0 руб.');
+		}
+
+		$('.popup-product-device__input.popup-product-device__input_bank').val(
+			product2CheckedId
+		);
+		$('.popup-product-device__left > img').attr('src', product2src);
+		if (product2srcset) {
+			$('.popup-product-device__left > img').attr('srcset', product2srcset);
+		}
+		if (product2alt) {
+			$('.popup-product-device__left > img').attr('alt', product2alt);
 		}
 	}
 
@@ -92,6 +117,9 @@ $(function () {
 			$(el).text(Number($(el).data('start')) + Number(curVal));
 		});
 
+		updateProductPopup();
+	});
+	$('.js-product-props-2').on('change', function () {
 		updateProductPopup();
 	});
 
