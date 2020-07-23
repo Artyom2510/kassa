@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>Эквайринг</title>
+
+	<link rel="shortcut icon" href="favicon/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+
+	<link rel="stylesheet" href="css/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<script src="js/libs/jquery-3.2.1.min.js"></script>
+	<script src="js/libs/jquery.smoothscroll.min.js"></script>
+	<script src="js/libs/jquery.switchPopup.min.js"></script>
+	<script src="js/common.min.js"></script>
+	<script src="js/acquiring.min.js"></script>
+</head>
+
+<body>
+	<div class="root">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<div class="logo">
+						<a href="#" class="logo__main">
+							<img src="img/Header/logo.svg" alt="Dataphone">
+						</a>
+
+						<div class="logo__line"></div>
+
+						<div class="logo__product">
+							<img src="img/Header/product-1.png" alt="Sunmi">
+						</div>
+					</div>
+				</div>
+
+				<div class="header__menu">
+					<div class="menu">
+						<div class="menu__burger-btn">
+							<button class="btn-burger js-tgl-menu">
+								<span class="btn-burger__line btn-burger__line_1"></span>
+								<span class="btn-burger__line btn-burger__line_2"></span>
+							</button>
+						</div>
+
+						<div class="menu__products-btn">
+							<button class="btn-products js-tgl-products-preview">
+								<img src="img/Header/products-device.svg" alt="device" class="btn-products__icon btn-products__icon_1">
+								<img src="img/Header/products-close.svg" alt="close" class="btn-products__icon btn-products__icon_2">
+								<span class="btn-products__text">Продукты</span>
+							</button>
+						</div>
+
+						<div class="menu__wrap">
+							<span class="menu__title-md">Меню</span>
+
+							<div class="menu__products-preview">
+								<div class="products-preview">
+									<h3 class="products-preview__title-md">Продукты</h3>
+									<ul class="products-preview__list">
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img
+													src="img/Header/products/1.png"
+													srcset="img/Header/products/1@2x.png 2x, img/Header/products/1@3x.png 3x"
+													alt="ККТ MSPOS-D-Ф"
+													class="products-preview__img"
+												>
+												<span class="products-preview__desc">ККТ MSPOS-D-Ф</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img
+													src="img/Header/products/2.png"
+													srcset="img/Header/products/2@2x.png 2x, img/Header/products/2@3x.png 3x"
+													alt="Sunmi p2 lite"
+													class="products-preview__img"
+												>
+												<span class="products-preview__desc">Sunmi p2 lite</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img
+													src="img/Header/products/3.png"
+													srcset="img/Header/products/3@2x.png 2x, img/Header/products/3@3x.png 3x"
+													alt="ККТ MSPOS-e-Ф"
+													class="products-preview__img"
+												>
+												<span class="products-preview__desc">ККТ MSPOS-e-Ф</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img
+													src="img/Header/products/4.png"
+													srcset="img/Header/products/4@2x.png 2x, img/Header/products/4@3x.png 3x"
+													alt="Аксессуары"
+													class="products-preview__img"
+												>
+												<span class="products-preview__desc">Аксессуары</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<nav class="menu__nav navigation">
+								<ul class="navigation__list">
+									<li class="navigation__item">
+										<a href="#" class="navigation__link">Эквайринг</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link navigation__link_active">Партнерам</a>
+									</li>
+									<li class="navigation__item">
+										<a href="#" class="navigation__link">Техподдержка</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link">Оплата и доставка</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="main">
+
+
+			<section class="acquiring">
+
+				<div class="acquiring__rails">
+					<img class="acquiring__card" src="img/acquiring/card.png" srcset="img/acquiring/card@2x.png 2x, img/acquiring/card@3x.png 3x" alt="">
+				</div>
+
+				<div class="acquiring__top-block top-block">
+
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-xl-5 col-xxl-5">
+								<div class="top-block__wrap">
+									<img src="img/acquiring/purse.png" srcset="img/acquiring/purse@2x.png 2x, img/acquiring/purse@3x.png 3x" alt="">
+								</div>
+							</div>
+							<div class="col-12 col-sm-6 col-md-5 col-xl-6 offset-xl-1 col-xxl-5 offset-xxl-1">
+								<h1 class="top-block__title h1">Эквайринг</h1>
+								<img src="img/acquiring/purse-xs.png" srcset="img/acquiring/purse-xs@2x.png 2x, img/acquiring/purse-xs@3x.png 3x" alt="" class="top-block__purse">
+								<div class="top-block__content">
+									<p>Безналичный способ оплаты - это выбор нового поколения. Увеличивайте число клиентов, продажи и итоговую прибыль с помощью эквайринга – быстрой и современной формы расчета за товары и услуги банковскими картами!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="acquiring__middle-block middle-block">
+
+					<div class="middle-block__hand-wraper">
+						<img src="img/acquiring/hand.png" alt="" srcset="img/acquiring/hand@2x.png 2x, img/acquiring/hand@3x.png 3x" class="middle-block__hand">
+					</div>
+					<div class="middle-block__fingers">
+						<img src="img/acquiring/fingers.png" alt="" srcset="img/acquiring/fingers@2x.png 2x, img/acquiring/fingers@3x.png 3x" class="middle-block__hand">
+					</div>
+
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 offset-sm-6 col-md-6 offset-md-6 col-lg-6 offset-lg-6 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-6">
+								<h3 class="middle-block__title h3">Сейчас мы разберем это сложное на первый взгляд понятие, и покажем Ваши выгоды при работе с нашими кассами.</h3>
+								<img src="img/acquiring/hand-xs.png" alt="" srcset="img/acquiring/hand-xs@2x.png 2x, img/acquiring/hand-xs@3x.png 3x" class="middle-block__hand-xs">
+								<div class="middle-block__content b-content">
+									<h3>Клиент Платит картой</h3>
+									<ol>
+										<li>Не ограничен суммой наличных средств и может потратить на покупку большее количество денег – средний чек увеличивается на 25%</li>
+										<li>Получает необходимый сервис – ему не нужно идти в банкомат, чтобы снять нужную сумму с карты</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="acquiring__bottom-block bottom-block">
+					<div class="bottom-block__kassa-wrap">
+						<img src="img/acquiring/kss.png" srcset="img/acquiring/kss@2x.png 2x, img/acquiring/kss@3x.png 3x" alt="" class="bottom-block__kassa">
+						<img src="img/acquiring/screen.png" srcset="img/acquiring/screen@2x.png 2x, img/acquiring/screen@3x.png 3x" alt="" class="bottom-block__screen">
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 offset-sm-6 col-md-6 offset-md-6 col-lg-6 offset-lg-6 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-6">
+								<img src="img/acquiring/kss-xs.png" srcset="img/acquiring/kss-xs@2x.png 2x, img/acquiring/kss-xs@3x.png 3x" alt="" class="bottom-block__kassa-xs">
+								<h3 class="bottom-block__title">Касса</h3>
+								<div class="bottom-block__content b-content">
+									<ul>
+										<li>Принимает платежи с любых банковских карт и NFC-устройств</li>
+										<li>Предоставляет все виды чеков: бумажные и электронные</li>
+										<li>Может использоваться для стационарных торговых точек и для выездной торговли</li>
+									</ul>
+								</div>
+								<div class="bottom-block__pay">
+									<ul class="pay-systems pay-systems_acquiring">
+										<li class="pay-systems__item pay-systems__item_google">
+											<img
+												class="pay-systems__img"
+												src="img/home/pay-systems/google-pay.png"
+												srcset="img/home/pay-systems/google-pay@2x.png 2x, img/home/pay-systems/google-pay@3x.png 3x"
+												alt="Google Pay"
+											>
+										</li>
+										<li class="pay-systems__item pay-systems__item_apple">
+											<img
+												class="pay-systems__img"
+												src="img/home/pay-systems/apple-pay.png"
+												srcset="img/home/pay-systems/apple-pay@2x.png 2x, img/home/pay-systems/apple-pay@3x.png 3x"
+												alt="Apple Pay"
+											>
+										</li>
+										<li class="pay-systems__item pay-systems__item_samsung">
+											<img
+												class="pay-systems__img"
+												src="img/home/pay-systems/samsung-pay.png"
+												srcset="img/home/pay-systems/samsung-pay@2x.png 2x, img/home/pay-systems/samsung-pay@3x.png 3x"
+												alt="Samsung Pay"
+											>
+										</li>
+										<li class="pay-systems__item pay-systems__item_mir">
+											<img
+											class="pay-systems__img"
+											src="img/home/pay-systems/mir.png"
+											srcset="img/home/pay-systems/mir@2x.png 2x, img/home/pay-systems/mir@3x.png 3x"
+											alt="MIR"
+											>
+										</li>
+										<li class="pay-systems__item pay-systems__item_visa">
+											<img
+												class="pay-systems__img"
+												src="img/home/pay-systems/visa.png"
+												srcset="img/home/pay-systems/visa@2x.png 2x, img/home/pay-systems/visa@3x.png 3x"
+												alt="Visa"
+											>
+										</li>
+										<li class="pay-systems__item pay-systems__item_emvco">
+											<img
+												class="pay-systems__img"
+												src="img/home/pay-systems/emvco.png"
+												srcset="img/home/pay-systems/emvco@2x.png 2x, img/home/pay-systems/emvco@3x.png 3x"
+												alt="EMVCo"
+											>
+										</li>
+										<li class="pay-systems__item pay-systems__item_mastercard">
+											<img
+												class="pay-systems__img"
+												src="img/home/pay-systems/mastercard.png"
+												srcset="img/home/pay-systems/mastercard@2x.png 2x, img/home/pay-systems/mastercard@3x.png 3x"
+												alt="Mastercard"
+											>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="crediting-money js-parent-rub">
+
+				<div class="crediting-money__rails">
+					<img src="img/acquiring/rub.png" alt="" srcset="img/acquiring/rub@2x.png 2x, img/acquiring/rub@3x.png 3x" class="crediting-money__rub js-rub">
+				</div>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-sm-6 offset-sm-6 col-xxl-6 offset-xxl-6">
+							<div class="crediting-money__bank">
+								<h3 class="crediting-money__title h3">Банк</h3>
+								<div class="crediting-money__content b-content">
+									<p>Деньги напрямую зачисляются на ваш счет в любом банке:</p>
+									<ol>
+										<li>Не нужно открывать новый р/с</li>
+										<li>Отсутствует необходимость оплачивать услуги инкассаторов</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-sm-6 col-xxl-5">
+							<img src="img/acquiring/pig.png" srcset="img/acquiring/pig@2x.png 2x, img/acquiring/pig@3x.png 3x" class="crediting-money__piggy">
+							<img src="img/acquiring/pig-xs.png" srcset="img/acquiring/pig-xs@2x.png 2x, img/acquiring/pig-xs@3x.png 3x" class="crediting-money__piggy-xs">
+						</div>
+
+						<div class="col-12 col-sm-6 col-xxl-6 offset-xxl-1">
+							<div class="crediting-money__outlet">
+								<h3 class="crediting-money__title h3">Торговая точка</h3>
+								<div class="crediting-money__content b-content">
+									<p>Увеличивает прибыль за счет:</p>
+									<ol>
+										<li>Роста среднего чека и клиентской базы (добавляются покупатели, которые пользуются только безналичной формой оплаты);</li>
+										<li>Обслуживания большего количества клиентов за единицу времени – продавцу не нужно тратить время на пересчет денег и отсчет сдачи;</li>
+										<li>Уменьшения расходов на инкассацию.</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="variant">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<h2 class="variant__title h2">Прямой эквайринг, вариант касс DATAPHONE</h2>
+						</div>
+						<div class="col-md-5 col-xxl-4 offset-xxl-1">
+							<div class="variant__frame-box">
+								<img src="img/acquiring/frame.png" alt="" srcset="img/acquiring/frame@2x.png 2x, img/acquiring/frame@3x.png 3x">
+							</div>
+						</div>
+						<div class="col-12 col-md-6 offset-md-1 col-xxl-5 offset-xxl-1">
+							<div class="variant__content b-content">
+								<ol>
+									<li>У вас есть расчетный счет в банке, вы хотите принимать оплаты банковскими картами</li>
+									<li>Вы покупаете кассу у нас.</li>
+									<li>Вы заключаете договор на эквайринг напрямую с банком, к вашему договору прикрепляются ваши кассы. По договору вы платите комиссию напрямую банку. Для примера это будет 2% от оборота.</li>
+								</ol>
+							</div>
+							<div class="variant__desc">
+								<p>Касса датафон общается напрямую с банком, все платежи по кассе сразу попадают на Ваш расчетный счет!</p>
+							</div>
+							<h3 class="variant__subtitle h3">Плюсы +</h3>
+							<div class="variant__content b-content">
+								<ul>
+									<li>Вы платите маленький процент за эквайринг</li>
+									<li>В цепочке платежей участвуете только Вы и Банк</li>
+									<li>В случае споров и мошенничества вы взаимодействуете напрямую с банком</li>
+									<li>Ответственность перед вами несет банк с огромным уставным капиталом, сфера регулируется государством</li>
+								</ul>
+							</div>
+							<h3 class="variant__subtitle h3">Минусы -</h3>
+							<div class="variant__content b-content">
+								<ul>
+									<li>Подключение к эквайрингу может занять несколько дней.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="cash-voucher">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 order-2 order-sm-1 col-sm-5 col-lg-6">
+							<img src="img/acquiring/cash-voucher.png" alt="" srcset="img/acquiring/cash-voucher@2x.png 2x, img/acquiring/cash-voucher@3x.png 3x" class="cash-voucher__img">
+						</div>
+						<div class="col-12 order-1 order-sm-2 col-sm-6 offset-sm-1 col-xxl-5 offset-lg-0">
+							<h3 class="cash-voucher__title h3">Возможность печати кассового чека в соответствии с Федеральным законом от 22.05.2003 № 54-ФЗ</h3>
+							<div class="cash-voucher__desc">
+								<p>кредитная организация, проводит операции по банковским картам, списывает деньги со счета покупателя и переводит на счет продавца. Несет ответственность за техническую сторону операций покупок по картам, получает комиссию от Торговой точки.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="dataphones">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-xxl-9">
+							<div class="dataphones__goods dataphones-goods">
+
+								<div class="dataphones-goods__wrap">
+
+									<div class="dataphones-goods__parent">
+										<div class="dataphones-goods__child">
+											<div class="dataphones-child">
+												<img src="img/acquiring/dataphones.png" alt="" srcset="img/acquiring/dataphones@2x.png 2x, img/acquiring/dataphones@3x.png 3x" class="dataphones-child__img">
+												<div class="dataphones-child__right">
+													<h3 class="dataphones-child__name h3">ККТ MSPOS-D-Ф</h3>
+													<a href="#" class="btn-link btn-link_more">
+														<span class="btn-link__text">Подробнее</span>
+														<img src="img/ui-icon/btn-link-arrow.svg" class="btn-link__arrow img-svg">
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="dataphones-goods__child">
+											<div class="dataphones-child">
+												<img src="img/acquiring/dataphones2.png" alt="" srcset="img/acquiring/dataphones2@3x.png 3x" class="dataphones-child__img">
+												<div class="dataphones-child__right">
+													<h3 class="dataphones-child__name h3">ККТ MSPOS-D-Ф</h3>
+													<a href="#" class="btn-link btn-link_more">
+														<span class="btn-link__text">Подробнее</span>
+														<img src="img/ui-icon/btn-link-arrow.svg" class="btn-link__arrow img-svg">
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="dataphones-goods__child">
+											<div class="dataphones-child">
+												<img src="img/acquiring/dataphones3.png" alt="" srcset="img/acquiring/dataphones3@2x.png 2x, img/acquiring/dataphones3@3x.png 3x" class="dataphones-child__img">
+												<div class="dataphones-child__right">
+													<h3 class="dataphones-child__name h3">ККТ MSPOS-D-Ф</h3>
+													<a href="#" class="btn-link btn-link_more">
+														<span class="btn-link__text">Подробнее</span>
+														<img src="img/ui-icon/btn-link-arrow.svg" class="btn-link__arrow img-svg">
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+						<div class="col-12 col-sm-6 offset-sm-6 col-xxl-3 offset-xxl-0">
+							<div class="dataphones__desc">
+								<p>Покупая кассу у компании датафон, вы получаете современное оборудование и кассовое программное обеспечение. В дальнейшем работаете напрямую с крупным банком, что гарантирует качественную стабильную работу без дополнительных издержек и рисков.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="home-sect home-sect-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<h2 class="home-sect__title h2">Выгодный эквайринг от ведущих банков России</h2>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="home-sect-2__left">
+								<div class="home-sect-2__row row">
+									<div class="col-6 col-md-4">
+										<div class="home-sect-2__bank home-sect-2__bank_1">
+											<img
+												src="img/home/banks/1.png"
+												srcset="img/home/banks/1@2x.png 2x, img/home/banks/1@3x.png 3x"
+												alt="Банк Россия"
+											>
+										</div>
+									</div>
+									<div class="col-6 col-md-4">
+										<div class="home-sect-2__bank home-sect-2__bank_2">
+											<img
+												src="img/home/banks/2.png"
+												srcset="img/home/banks/2@2x.png 2x, img/home/banks/2@3x.png 3x"
+												alt="ГАЗПРОМБАНК"
+											>
+										</div>
+									</div>
+									<div class="col-6 col-md-4">
+										<div class="home-sect-2__bank home-sect-2__bank_3">
+											<img
+												src="img/home/banks/3.png"
+												srcset="img/home/banks/3@2x.png 2x, img/home/banks/3@3x.png 3x"
+												alt="РНКБ"
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="home-sect-2__right">
+								<div class="home-sect-2__row row">
+									<div class="col-6 col-xxl-4">
+										<div class="home-sect-2__item home-sect-2__item_loyalnost hs2-item">
+											<h3 class="hs2-item__title h3">Лояльность</h3>
+
+											<div class="hs2-item__desc b-content">
+												<p>РКО в любом банке - перечисление без комиссий</p>
+											</div>
+										</div>
+
+										<div class="home-sect-2__item home-sect-2__item_stavka hs2-item">
+											<h3 class="hs2-item__title h3">Фиксированная ставка</h3>
+
+											<div class="hs2-item__desc b-content">
+												<p>Ставка по эквайрингу - от 18%, без скрытых и арендных платежей</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-6 col-xxl-4 offset-xxl-2">
+										<div class="home-sect-2__item home-sect-2__item_podkluchenie hs2-item">
+											<h3 class="hs2-item__title h3">Подключение</h3>
+
+											<div class="hs2-item__desc b-content">
+												<p>Подключение за 10-14 дней по стандартному пакету документов</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="sect-help">
+				<div class="container">
+					<h2 class="sect-help__title h2">Нужна помощь? </h2>
+
+					<div class="sect-help__desc b-content">
+						<p>Отправьте заявку, и менеджер перезвонит вам в ближайшее время</p>
+					</div>
+
+					<div class="sect-help__btn">
+						<button class="btn-ac">
+							<span class="btn-ac__text">Оставить заявку</span>
+						</button>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__top">
+					<div class="row">
+						<div class="col-sm-4 col-xl-4 offset-xl-1">
+							<h3 class="footer__question h3">Остались вопросы?</h3>
+						</div>
+						<div class="col-sm-4 col-xl-4">
+							<a href="tel:84951084131" class="footer__phone h3">+7 495 108-41-31</a>
+						</div>
+						<div class="col-sm-4 col-xl-3">
+							<a href="mailto:hello@dataphone.com" class="footer__email h3">hello@dataphone.com</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xl-11 offset-xl-1">
+						<div class="footer__hr"></div>
+					</div>
+				</div>
+
+				<div class="footer__bottom">
+					<div class="row">
+						<div class="col-xl-11 offset-xl-1">
+							<div class="footer__links">
+								<a href="#">Политика конфиденциальности</a>
+								<a href="#">Пользовательское соглашение</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+</body>
+</html>
