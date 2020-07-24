@@ -1,19 +1,24 @@
 @include font-face("HalvarBreitCY", "#{$url-font}/HalvarBreitCY-Bold/HalvarBreitCY-Bold", "ttf") {
 	font-weight: 700;
+	font-display: swap;
 }
 
 @include font-face("HalvarBreitCY", "#{$url-font}/HalvarBreitCY-Medium/HalvarBreitCY-Medium", "ttf") {
 	font-weight: 500;
+	font-display: swap;
 }
 
 @include font-face("GothamPro", "#{$url-font}/GothamPro-Regular/GothamPro-Regular", "ttf") {
 	font-weight: 400;
+	font-display: swap;
 }
 
 @include font-face("GothamPro", "#{$url-font}/GothamPro-Medium/GothamPro-Medium", "ttf") {
 	font-weight: 500;
+	font-display: swap;
 }
 
 @include font-face("GothamPro", "#{$url-font}/GothamPro-Black/GothamPro-Black", "ttf") {
 	font-weight: 900;
+	font-display: swap;
 }

@@ -52,6 +52,45 @@ $(function () {
 	var sliderStep = sliderWidth / sliderItems;
 	var currentSlide = 0;
 	var onlineSlide = 0;
+	var loadingSlides = [
+		true,
+		true,
+		true,
+		true,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		true,
+		true,
+		true
+	];
 
 	function getNewSlideIndex(dir, index) {
 		var res = 0;
@@ -69,6 +108,36 @@ $(function () {
 			}
 		}
 		return res;
+	}
+
+	function loadSlideImage(dir, index) {
+		var idx = 0;
+		if (dir === 'left') {
+			if (currentSlide - (index + 3) < 0) {
+				idx = sliderItems + (currentSlide - (index + 3));
+			} else {
+				idx = currentSlide - (index + 3);
+			}
+		} else if (dir === 'right') {
+			if (currentSlide + (index + 3) >= sliderItems) {
+				idx = currentSlide + (index + 3) - sliderItems;
+			} else {
+				idx = currentSlide + (index + 3);
+			}
+		}
+		console.log(index, idx);
+
+		if (!loadingSlides[idx]) {
+			loadingSlides[idx] = true;
+
+			var $pic = $('.hs1-center__slider picture:nth-child(' + (idx + 1) + ')');
+			var $src = $pic.children('source');
+			var $img = $pic.children('img');
+			$src.attr('srcset', $src.attr('data-srcset'));
+			$img.attr('src', $img.attr('data-src'));
+			$img.attr('srcset', $img.attr('data-srcset'));
+			$pic.addClass('load');
+		}
 	}
 
 	function pointerdownHandler(e) {
@@ -104,10 +173,9 @@ $(function () {
 			} else if (firstXcoords > 0) {
 				/* Движение в право */
 				if (firstXcoords < events[0].clientX) {
-					onlineSlide = getNewSlideIndex(
-						'right',
-						Math.floor((events[0].clientX - firstXcoords) / sliderStep)
-					);
+					var idx = Math.floor((events[0].clientX - firstXcoords) / sliderStep);
+					onlineSlide = getNewSlideIndex('right', idx);
+					loadSlideImage('right', idx); // Проверяю загруженность картинки
 					$('.hs1-center__item').removeClass('hs1-center__item_active');
 					$('.hs1-center__item:nth-child(' + (onlineSlide + 2) + ')').addClass(
 						'hs1-center__item_active'
@@ -118,10 +186,9 @@ $(function () {
 				}
 				/* Движение в лево */
 				if (firstXcoords > events[0].clientX) {
-					onlineSlide = getNewSlideIndex(
-						'left',
-						Math.floor((firstXcoords - events[0].clientX) / sliderStep)
-					);
+					var idx = Math.floor((firstXcoords - events[0].clientX) / sliderStep);
+					onlineSlide = getNewSlideIndex('left', idx);
+					loadSlideImage('left', idx); // Проверяю загруженность картинки
 					$('.hs1-center__item').removeClass('hs1-center__item_active');
 					$('.hs1-center__item:nth-child(' + (onlineSlide + 2) + ')').addClass(
 						'hs1-center__item_active'
