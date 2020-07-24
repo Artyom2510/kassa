@@ -678,6 +678,19 @@ h5 {
 		}
 	}
 
+	&_w304 {
+		width: 304px;
+
+		@include media(md) {
+			width: 288px;
+
+			#{$p}__text {
+				font-size: 13px;
+				letter-spacing: 1.56px;
+			}
+		}
+	}
+
 	&__text {
 		position: relative;
 		z-index: 2;
