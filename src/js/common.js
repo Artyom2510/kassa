@@ -475,4 +475,67 @@ $(function () {
 			}
 		});
 	});
+
+	// Попап-кука
+	var popupCookie = $('.popup-cookie');
+	popupCookie.switchPopup({
+		pageScrollClass: 'root',
+		btnClass: 'js-tgl-popup-cookie',
+		displayClass: 'popup-cookie_display',
+		visibleClass: 'popup-cookie_visible',
+		duration: 200
+	});
+
+	/* Функции для работы с куками */
+	function getCookie(name) {
+		var matches = document.cookie.match(
+			new RegExp(
+				'(?:^|; )' +
+					// eslint-disable-next-line
+					name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') +
+					'=([^;]*)'
+			)
+		);
+		return matches ? decodeURIComponent(matches[1]) : undefined;
+	}
+
+	function setCookie(name, value, options) {
+		// eslint-disable-next-line
+		var options = options || {};
+		// eslint-disable-next-line
+		var expires = options.expires;
+		// eslint-disable-next-line
+		if (typeof expires === 'number' && expires) {
+			var d = new Date();
+			d.setTime(d.getTime() + expires * 1000);
+			// eslint-disable-next-line
+			var expires = (options.expires = d);
+		}
+		// eslint-disable-next-line
+		if (expires && expires.toUTCString) {
+			// eslint-disable-next-line
+			options.expires = expires.toUTCString();
+		}
+		// eslint-disable-next-line
+		var value = encodeURIComponent(value);
+
+		var updatedCookie = name + '=' + value;
+
+		// eslint-disable-next-line
+		for (var propName in options) {
+			updatedCookie += '; ' + propName;
+			var propValue = options[propName];
+			if (propValue !== true) {
+				updatedCookie += '=' + propValue;
+			}
+		}
+
+		document.cookie = updatedCookie;
+	}
+
+	if (getCookie('popupCookie') === undefined) {
+		popupCookie.switchPopup('open').on('afterClose', function () {
+			setCookie('popupCookie', 'true', { expires: 7776000 }); // кука на 90 дней
+		});
+	}
 });

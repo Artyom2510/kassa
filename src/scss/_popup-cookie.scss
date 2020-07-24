@@ -1,0 +1,99 @@
+.popup-cookie {
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+	width: calc(100% - var(--scroll-width));
+	display: none;
+	padding: 16px 0;
+	opacity: 0;
+	background-color: rgba($textBtn, 0.74);
+	backdrop-filter: blur(19px);
+	transition: opacity 0.2s ease-in;
+
+	&_display {
+		display: block;
+	}
+
+	&_visible {
+		opacity: 1;
+	}
+
+	@include media(sm) {
+		padding: 32px 0;
+	}
+
+	@include media(xs) {
+		padding-top: 24px;
+	}
+
+	@include media(xxs) {
+		padding-top: 16px;
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include media(xs) {
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 0 4px;
+		}
+	}
+
+	&__desc {
+		display: block;
+		width: calc(#{_col(10, xxl)} - 40px);
+
+		@include media(xl) {
+			width: calc(#{_col(9, xl)} - 24px);
+		}
+		@include media(lg) {
+			width: calc(#{_col(9, lg)} - 48px);
+		}
+
+		@include media(md) {
+			width: calc(#{_col(8, md)} - 24px);
+		}
+
+		@include media(sm) {
+			width: calc(#{_col(7, sm)} - 48px);
+		}
+
+		@include media(xs) {
+			width: 100%;
+			margin-bottom: 32px;
+		}
+
+		@include media(xxs) {
+			margin-bottom: 24px;
+		}
+
+		p {
+			color: #fff;
+			margin: 0;
+
+			@include media(md) {
+				font-size: 12px;
+			}
+
+			@include media(xs) {
+				text-align: center;
+			}
+
+			a {
+				text-decoration: underline;
+				color: #fff;
+
+				&:hover,
+				&:focus,
+				&:active {
+					text-decoration: underline;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
