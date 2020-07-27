@@ -459,6 +459,7 @@
 }
 
 .accessory-goods {
+	$p: &;
 	display: block;
 	width: calc(#{_col(3, xxl)} - 24px);
 	padding-top: 34px;
@@ -565,19 +566,42 @@
 		margin: 0;
 	}
 
+	&__check {
+		display: none;
+
+		&:checked + #{$p}__buy {
+			/* stylelint-disable-next-line */
+			svg {
+				&:first-child {
+					display: none;
+				}
+			}
+			/* stylelint-disable-next-line */
+			img {
+				&:last-child {
+					display: block;
+				}
+			}
+
+			&::after {
+				transform: translate(0, 0);
+			}
+		}
+	}
+
 	&__buy {
 		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: transparent;
-		border: none;
-		outline: none !important;
 		max-width: 77px;
 		flex: 0 0 77px;
 		height: 77px;
+		margin: 0;
 		padding: 0;
 		cursor: pointer;
+		background-color: transparent;
+		outline: none !important;
 		overflow: hidden;
 
 		@include media(xl) {
@@ -622,7 +646,6 @@
 			transition: all 0.3s ease-in;
 		}
 
-		&_active,
 		&:hover,
 		&:focus {
 			path {
@@ -631,21 +654,6 @@
 
 			&::after {
 				transform: translate(0, 0);
-			}
-		}
-
-		&_active {
-			/* stylelint-disable-next-line */
-			svg {
-				&:first-child {
-					display: none;
-				}
-			}
-			/* stylelint-disable-next-line */
-			img {
-				&:last-child {
-					display: block;
-				}
 			}
 		}
 	}

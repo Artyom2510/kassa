@@ -12,6 +12,16 @@ $(function () {
 	// Поправка на отступ
 	var padding = 24;
 
+	// Переменные для подсчёта суммы
+	var check = $('.js-accessory-check');
+	var currentCheck;
+	var currentCheckPrice;
+	var currentDataGroup;
+	var currentBlockPrice;
+	var initialPrice;
+	var value;
+	var input = $('.js-hidden-order');
+
 	$(document).ready(function () {
 		slGoods.each(function () {
 			scrollW = $(this)[0].scrollWidth;
@@ -54,5 +64,57 @@ $(function () {
 		} else {
 			$(this).siblings('.js-scroll-btn-right').show();
 		}
+	});
+
+	// При изменении чекбокса
+	check.on('change', function () {
+		currentCheck = $(this);
+		currentDataGroup = currentCheck.data('group');
+		currentBlockPrice = currentCheck
+			.parents('.accessory-sl')
+			.find('.accessory-sl__right');
+		currentCheckPrice = currentCheck
+			.parent()
+			.find('.js-price')
+			.text()
+			.replace(/\s/g, '');
+		initialPrice =
+			+$('.js-price[data-group="' + currentDataGroup + '"]')
+				.text()
+				.replace(/\s/g, '') || 0;
+		if (currentCheck.is(':checked')) {
+			initialPrice += +currentCheckPrice;
+			// При увелечении суммы добавляется класс, если раньше не было
+			if (!currentBlockPrice.hasClass('accessory-sl__right_show')) {
+				currentBlockPrice.addClass('accessory-sl__right_show');
+			}
+		} else {
+			initialPrice -= +currentCheckPrice;
+			// Если сумма равна 0, то блок с кнопкой и ценой прячется
+			if (initialPrice === 0) {
+				currentBlockPrice.removeClass('accessory-sl__right_show');
+			}
+		}
+		currentBlockPrice.find('.js-price').text(initialPrice);
+	});
+
+	$('.js-order').on('click', function () {
+		currentDataGroup = $(this).data('group');
+	});
+
+	$('.popup-buy').on('beforeOpen', function () {
+		input.val('');
+		$('.js-accessory-check[data-group="' + currentDataGroup + '"]').each(
+			function () {
+				if ($(this).is(':checked')) {
+					value = input.val();
+					if (!value.length) {
+						input.val($(this)[0].id);
+					} else {
+						input.val(value + ', ' + $(this)[0].id);
+					}
+				}
+			}
+		);
 	});
 });
