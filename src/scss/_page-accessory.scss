@@ -604,6 +604,18 @@
 		outline: none !important;
 		overflow: hidden;
 
+		@include media-up(lg) {
+			&:hover,
+			&:focus {
+				path {
+					fill: #fff;
+				}
+
+				&::after {
+					transform: translate(0, 0);
+				}
+			}
+		}
 		@include media(xl) {
 			max-width: 74px;
 			flex: 0 0 74px;
@@ -644,17 +656,6 @@
 			background-color: $ac;
 			transform: translate(100%, 100%);
 			transition: all 0.3s ease-in;
-		}
-
-		&:hover,
-		&:focus {
-			path {
-				fill: #fff;
-			}
-
-			&::after {
-				transform: translate(0, 0);
-			}
 		}
 	}
 }
