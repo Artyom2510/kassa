@@ -24,7 +24,7 @@ Price.prototype.init = function () {
 
 Price.prototype.update = function () {
 	var _ = this;
-	if (_.$price.text().indexOf(' ') === -1) {
+	if (_.$price.text().indexOf(' ') === -1 && _.$price.text().length > 3) {
 		var resultArr = [];
 		var reverseTextArr = _.$price.text().split('').reverse();
 		for (var i = 0; i < reverseTextArr.length; i++) {
