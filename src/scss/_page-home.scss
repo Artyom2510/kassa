@@ -2585,7 +2585,7 @@
 		@include media(sm) {
 			max-width: #{$colWidthMd * 4};
 			flex: 0 0 #{$colWidthMd * 4};
-			margin-right: calc(50vw + 23px);
+			margin-right: calc(50vw + 15px);
 		}
 
 		@include media(xs) {

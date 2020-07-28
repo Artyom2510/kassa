@@ -53,43 +53,43 @@ $(function () {
 	var currentSlide = 0;
 	var onlineSlide = 0;
 	var loadingSlides = [
-		true,
-		true,
-		true,
-		true,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		true,
-		true,
-		true
+		true, // 0
+		true, // 1
+		true, // 2
+		true, // 3
+		false, // 4
+		false, // 5
+		false, // 6
+		false, // 7
+		false, // 8
+		false, // 9
+		false, // 10
+		false, // 11
+		false, // 12
+		false, // 13
+		false, // 14
+		false, // 15
+		false, // 16
+		false, // 17
+		false, // 18
+		false, // 19
+		false, // 20
+		false, // 21
+		false, // 22
+		false, // 23
+		false, // 24
+		false, // 25
+		false, // 26
+		false, // 27
+		false, // 28
+		false, // 29
+		false, // 30
+		false, // 31
+		false, // 32
+		false, // 33
+		true, // 34
+		true, // 35
+		true // 36
 	];
 
 	function getNewSlideIndex(dir, index) {
@@ -125,18 +125,19 @@ $(function () {
 				idx = currentSlide + (index + 3);
 			}
 		}
-		console.log(index, idx);
 
 		if (!loadingSlides[idx]) {
-			loadingSlides[idx] = true;
-
-			var $pic = $('.hs1-center__slider picture:nth-child(' + (idx + 1) + ')');
+			var $pic = $(
+				'.hs1-center__slider picture:nth-of-type(' + (idx + 1) + ')'
+			);
 			var $src = $pic.children('source');
 			var $img = $pic.children('img');
 			$src.attr('srcset', $src.attr('data-srcset'));
 			$img.attr('src', $img.attr('data-src'));
 			$img.attr('srcset', $img.attr('data-srcset'));
 			$pic.addClass('load');
+
+			loadingSlides[idx] = true;
 		}
 	}
 
