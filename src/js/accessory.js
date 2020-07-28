@@ -113,9 +113,9 @@ $(function () {
 				if ($(this).is(':checked')) {
 					value = input.val();
 					if (!value.length) {
-						input.val($(this)[0].id);
+						input.val($(this).data('id'));
 					} else {
-						input.val(value + ', ' + $(this)[0].id);
+						input.val(value + ', ' + $(this).data('id'));
 					}
 				}
 			}
