@@ -102,6 +102,10 @@ $(function () {
 		currentDataGroup = $(this).data('group');
 	});
 
+	$('.js-clear-group').on('click', function () {
+		currentDataGroup = null;
+	});
+
 	$('.popup-buy').on('beforeOpen', function () {
 		input.val('');
 		$('.js-accessory-check[data-group="' + currentDataGroup + '"]').each(
