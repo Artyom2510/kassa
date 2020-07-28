@@ -522,6 +522,11 @@
 			width: 150px;
 			margin-bottom: 0;
 		}
+
+		> * {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	&__desc {

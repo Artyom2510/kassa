@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import '../vars'; // Импорт переменных всегда первый
+@import "../vars"; // Импорт переменных всегда первый
 
 // Переопределение SlickSlider переменных
 
@@ -8,15 +8,15 @@
 // "\2192" outputs ascii character "→"
 // "\2022" outputs ascii character "•"
 
-$slick-font-path: '#{$url-font-libs}/slick'; // Путь ко шрифту
-$slick-font-family: 'slick'; // Название шрифта
-$slick-loader-path: '#{$url-img-libs}/slick'; // Путь к файлу 'ajax-loader.gif'
+$slick-font-path: "#{$url-font-libs}/slick/"; // Путь ко шрифту
+$slick-font-family: "slick"; // Название шрифта
+$slick-loader-path: "#{$url-img-libs}/slick/"; // Путь к файлу 'ajax-loader.gif'
 $slick-arrow-color: #fff; // Цвет стрелок слайдера
 $slick-dot-color: #000; // Цвет указателей страниц слайдера
 $slick-dot-color-active: $slick-dot-color; // Цвет указателей страниц слайдера (активное состояние)
-$slick-prev-character: '\2190'; // Код символа для стралки назад
-$slick-next-character: '\2192'; // Код символа для стралки вперед
-$slick-dot-character: '\2022'; // Код символа для указателя страницы
+$slick-prev-character: "\2190"; // Код символа для стралки назад
+$slick-next-character: "\2192"; // Код символа для стралки вперед
+$slick-dot-character: "\2022"; // Код символа для указателя страницы
 $slick-dot-size: 10px; // Размер указателя страницы
 $slick-opacity-default: 0.75; // Прозрачность элемента слайдера (текущего)
 $slick-opacity-on-hover: 1; // Прозрачность элементов слайдера (наведение)
@@ -28,7 +28,7 @@ $slick-opacity-not-active: 0.25; // Прозрачность элементов 
 	@if function-exists(image-url) {
 		@return image-url($url);
 	} @else {
-		@return url($slick-loader-path+$url);
+		@return url($slick-loader-path + $url);
 	}
 }
 
@@ -36,7 +36,7 @@ $slick-opacity-not-active: 0.25; // Прозрачность элементов 
 	@if function-exists(font-url) {
 		@return font-url($url);
 	} @else {
-		@return url($slick-font-path+$url);
+		@return url($slick-font-path + $url);
 	}
 }
 
@@ -44,19 +44,16 @@ $slick-opacity-not-active: 0.25; // Прозрачность элементов 
 
 .slick-list {
 	.slick-loading & {
-		background: #fff slick-image-url('ajax-loader.gif') center center no-repeat;
+		background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
 	}
 }
 
 /* Icons */
-@if $slick-font-family == 'slick' {
+@if $slick-font-family == "slick" {
 	@font-face {
-		font-family: 'slick';
-		src: slick-font-url('slick.eot');
-		src: slick-font-url('slick.eot?#iefix') format('embedded-opentype'),
-			slick-font-url('slick.woff') format('woff'),
-			slick-font-url('slick.ttf') format('truetype'),
-			slick-font-url('slick.svg#slick') format('svg');
+		font-family: "slick";
+		src: slick-font-url("slick.eot");
+		src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
 		font-weight: normal;
 		font-style: normal;
 	}
@@ -107,13 +104,13 @@ $slick-opacity-not-active: 0.25; // Прозрачность элементов 
 
 .slick-prev {
 	left: -25px;
-	[dir='rtl'] & {
+	[dir="rtl"] & {
 		left: auto;
 		right: -25px;
 	}
 	&:before {
 		content: $slick-prev-character;
-		[dir='rtl'] & {
+		[dir="rtl"] & {
 			content: $slick-next-character;
 		}
 	}
@@ -121,13 +118,13 @@ $slick-opacity-not-active: 0.25; // Прозрачность элементов 
 
 .slick-next {
 	right: -25px;
-	[dir='rtl'] & {
+	[dir="rtl"] & {
 		left: -25px;
 		right: auto;
 	}
 	&:before {
 		content: $slick-next-character;
-		[dir='rtl'] & {
+		[dir="rtl"] & {
 			content: $slick-prev-character;
 		}
 	}
