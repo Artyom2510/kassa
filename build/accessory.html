@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>Аксессуары</title>
+
+	<link rel="shortcut icon" href="favicon/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+
+	<link rel="stylesheet" href="css/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<script src="js/libs/jquery-3.2.1.min.js"></script>
+	<script src="js/libs/jquery.smoothscroll.min.js"></script>
+	<script src="js/libs/jquery.switchPopup.min.js"></script>
+	<script src="js/common.min.js"></script>
+	<script src="js/accessory.min.js"></script>
+</head>
+
+<body>
+	<div class="root">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<div class="logo">
+						<a href="#" class="logo__main">
+							<img src="img/Header/logo.svg" alt="Dataphone">
+						</a>
+
+						<div class="logo__line"></div>
+
+						<div class="logo__product">
+							<img src="img/Header/product-1.png" alt="Sunmi">
+						</div>
+					</div>
+				</div>
+
+				<div class="header__menu">
+					<div class="menu">
+						<div class="menu__burger-btn">
+							<button class="btn-burger js-tgl-menu">
+								<span class="btn-burger__line btn-burger__line_1"></span>
+								<span class="btn-burger__line btn-burger__line_2"></span>
+							</button>
+						</div>
+
+						<div class="menu__products-btn">
+							<button class="btn-products js-tgl-products-preview">
+								<img src="img/Header/products-device.svg" alt="device" class="btn-products__icon btn-products__icon_1">
+								<img src="img/Header/products-close.svg" alt="close" class="btn-products__icon btn-products__icon_2">
+								<span class="btn-products__text">Продукты</span>
+							</button>
+						</div>
+
+						<div class="menu__wrap">
+							<span class="menu__title-md">Меню</span>
+
+							<div class="menu__products-preview">
+								<div class="products-preview">
+									<h3 class="products-preview__title-md">Продукты</h3>
+									<ul class="products-preview__list">
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img src="img/Header/products/1.png"
+													srcset="img/Header/products/1@2x.png 2x, img/Header/products/1@3x.png 3x" alt="ККТ MSPOS-D-Ф"
+													class="products-preview__img">
+												<span class="products-preview__desc">ККТ MSPOS-D-Ф</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img src="img/Header/products/2.png"
+													srcset="img/Header/products/2@2x.png 2x, img/Header/products/2@3x.png 3x" alt="Sunmi p2 lite"
+													class="products-preview__img">
+												<span class="products-preview__desc">Sunmi p2 lite</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img src="img/Header/products/3.png"
+													srcset="img/Header/products/3@2x.png 2x, img/Header/products/3@3x.png 3x" alt="ККТ MSPOS-e-Ф"
+													class="products-preview__img">
+												<span class="products-preview__desc">ККТ MSPOS-e-Ф</span>
+											</a>
+										</li>
+										<li class="products-preview__item">
+											<a href="#" class="products-preview__link">
+												<img src="img/Header/products/4.png"
+													srcset="img/Header/products/4@2x.png 2x, img/Header/products/4@3x.png 3x" alt="Аксессуары"
+													class="products-preview__img">
+												<span class="products-preview__desc">Аксессуары</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<nav class="menu__nav navigation">
+								<ul class="navigation__list">
+									<li class="navigation__item">
+										<a href="#" class="navigation__link">Эквайринг</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link navigation__link_active">Партнерам</a>
+									</li>
+									<li class="navigation__item">
+										<a href="#" class="navigation__link">Техподдержка</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link">Оплата и доставка</a>
+									</li>
+									<li class="navigation__item navigation__item_ml">
+										<a href="#" class="navigation__link">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="main">
+
+			<section class="accessory">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<h1 class="accessory__title">Аксессуары</h1>
+
+							<div class="accessory__product-block product-block">
+
+								<div class="product-block__wraper">
+									<div class="product-block__prev">
+										<img src="img/accessory/accessory-first.png"
+											srcset="img/accessory/accessory-first@2x.png 2x, img/accessory/accessory-first@3x.png 3x" alt="">
+									</div>
+									<img src="img/ui-icon/frame.svg" alt="" class="product-block__frame">
+								</div>
+
+								<div class="product-block__right">
+									<h2 class="product-block__title h2">Sunmi p2 liteФ</h2>
+									<a href="#" class="product-block__more btn-link btn-link_white">
+										<span class="btn-link__text">Подробнее</span>
+										<img src="img/ui-icon/btn-link-arrow.svg" class="btn-link__arrow img-svg">
+									</a>
+
+									<div class="accessory__slider accessory-sl">
+										<h3 class="accessory-sl__title h3">Аксессуары</h3>
+										<div class="accessory-sl__right">
+											<div class="accessory-sl__price-wrap">
+												<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+												<h3 class="h3"><span class="js-price" data-group="group0">0</span> р.</h3>
+											</div>
+											<button class="btn-ac btn-ac_md-145 js-tgl-popup-buy js-order" data-group="group0">
+												<span class="btn-ac__text">Заказать</span>
+											</button>
+										</div>
+
+										<div class="accessory-sl__wraper">
+
+											<button class="accessory-sl__prev js-scroll-btn-left">
+												<img src="img/ui-icon/arrow-sl.svg" alt="">
+											</button>
+											<button class="accessory-sl__next js-scroll-btn-right">
+												<img src="img/ui-icon/arrow-sl.svg" alt="">
+											</button>
+
+											<div class="accessory-sl__goods js-sl-goods">
+
+												<div class="accessory-sl__goods-wrap">
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">120000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-1" data-group="group0" data-id="1">
+																<label class="accessory-goods__buy" for="accessory-goods-1">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол Чехол Чехол Чехол Чехол Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">20000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-2" data-group="group0" data-id="2">
+																<label class="accessory-goods__buy" for="accessory-goods-2">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">20000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-3" data-group="group0" data-id="3">
+																<label class="accessory-goods__buy" for="accessory-goods-3">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="accessory__product-block product-block">
+
+								<div class="product-block__wraper">
+									<div class="product-block__prev">
+										<img src="img/accessory/accessory-second.png"
+											srcset="img/accessory/accessory-second@2x.png 2x, img/accessory/accessory-second@3x.png 3x"
+											alt="">
+									</div>
+									<img src="img/ui-icon/frame.svg" alt="" class="product-block__frame">
+								</div>
+
+								<div class="product-block__right">
+									<h2 class="product-block__title h2">Sunmi p2 liteФ</h2>
+									<a href="#" class="product-block__more btn-link btn-link_white">
+										<span class="btn-link__text">Подробнее</span>
+										<img src="img/ui-icon/btn-link-arrow.svg" class="btn-link__arrow img-svg">
+									</a>
+
+									<div class="accessory__slider accessory-sl">
+										<h3 class="accessory-sl__title h3">Аксессуары</h3>
+										<div class="accessory-sl__right">
+											<div class="accessory-sl__price-wrap">
+												<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+												<h3 class="h3"><span class="js-price" data-group="group1">0</span> р.</h3>
+											</div>
+											<button class="btn-ac btn-ac_md-145 js-tgl-popup-buy js-order" data-group="group1">
+												<span class="btn-ac__text">Заказать</span>
+											</button>
+										</div>
+
+										<div class="accessory-sl__wraper">
+
+											<button class="accessory-sl__prev js-scroll-btn-left">
+												<img src="img/ui-icon/arrow-sl.svg" alt="">
+											</button>
+											<button class="accessory-sl__next js-scroll-btn-right">
+												<img src="img/ui-icon/arrow-sl.svg" alt="">
+											</button>
+
+											<div class="accessory-sl__goods js-sl-goods">
+												<div class="accessory-sl__goods-wrap">
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">20000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-4" data-group="group1" data-id="1">
+																<label class="accessory-goods__buy" for="accessory-goods-4">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол Чехол Чехол Чехол Чехол Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">20000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-5" data-group="group1" data-id="2">
+																<label class="accessory-goods__buy" for="accessory-goods-5">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">20000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-6" data-group="group1" data-id="5">
+																<label class="accessory-goods__buy" for="accessory-goods-6">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="accessory__product-block product-block">
+
+								<div class="product-block__wraper">
+									<div class="product-block__prev">
+										<img src="img/accessory/accessory-third.png"
+											srcset="img/accessory/accessory-third@2x.png 2x, img/accessory/accessory-third@3x.png 3x" alt="">
+									</div>
+									<img src="img/ui-icon/frame.svg" alt="" class="product-block__frame">
+								</div>
+
+								<div class="product-block__right">
+									<h2 class="product-block__title h2">Sunmi p2 liteФ</h2>
+									<a href="#" class="product-block__more btn-link btn-link_white">
+										<span class="btn-link__text">Подробнее</span>
+										<img src="img/ui-icon/btn-link-arrow.svg" class="btn-link__arrow img-svg">
+									</a>
+
+									<div class="accessory__slider accessory-sl">
+										<h3 class="accessory-sl__title h3">Аксессуары</h3>
+										<div class="accessory-sl__right">
+											<div class="accessory-sl__price-wrap">
+												<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+												<h3 class="h3"><span class="js-price" data-group="group2">0</span> р.</h3>
+											</div>
+											<button class="btn-ac btn-ac_md-145 js-tgl-popup-buy js-order" data-group="group2">
+												<span class="btn-ac__text">Заказать</span>
+											</button>
+										</div>
+
+										<div class="accessory-sl__wraper">
+
+											<button class="accessory-sl__prev js-scroll-btn-left">
+												<img src="img/ui-icon/arrow-sl.svg" alt="">
+											</button>
+											<button class="accessory-sl__next js-scroll-btn-right">
+												<img src="img/ui-icon/arrow-sl.svg" alt="">
+											</button>
+
+											<div class="accessory-sl__goods js-sl-goods">
+
+												<div class="accessory-sl__goods-wrap">
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">120000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-7" data-group="group2" data-id="1">
+																<label class="accessory-goods__buy" for="accessory-goods-7">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">120000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-8" data-group="group2" data-id="3">
+																<label class="accessory-goods__buy" for="accessory-goods-8">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">120000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-9" data-group="group2" data-id="4">
+																<label class="accessory-goods__buy" for="accessory-goods-9">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол Чехол Чехол Чехол Чехол Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">20000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-10" data-group="group2" data-id="2">
+																<label class="accessory-goods__buy" for="accessory-goods-10">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+													<div class="accessory-sl__slide">
+														<div class="accessory-goods">
+															<div class="accessory-goods__prev">
+																<img src="img/accessory/zaglushka.png"
+																	srcset="img/accessory/zaglushka@2x.png 2x, img/accessory/zaglushka@3x.png 3x" alt="">
+															</div>
+															<div class="accessory-goods__bottom">
+																<div class="accessory-goods__info">
+																	<h4 class="accessory-goods__name h4">Чехол</h4>
+																	<h3 class="accessory-goods__price h3"><span class="js-price">20000</span> р.</h3>
+																</div>
+																<input class="accessory-goods__check js-accessory-check" type="checkbox" id="accessory-goods-11" data-group="group2" data-id="5">
+																<label class="accessory-goods__buy" for="accessory-goods-11">
+																	<img src="img/ui-icon/btn-big-basket.svg" alt="" class="img-svg">
+																	<img src="img/ui-icon/arrow-down.svg" alt="">
+																</label>
+															</div>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="sect-help">
+				<div class="container">
+					<h2 class="sect-help__title h2">Нужна помощь? </h2>
+
+					<div class="sect-help__desc b-content">
+						<p>Отправьте заявку, и менеджер перезвонит вам в ближайшее время</p>
+					</div>
+
+					<div class="sect-help__btn">
+						<button class="btn-ac js-tgl-popup-buy js-clear-group">
+							<span class="btn-ac__text">Оставить заявку</span>
+						</button>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__top">
+					<div class="row">
+						<div class="col-sm-4 col-xl-4 offset-xl-1">
+							<h3 class="footer__question h3">Остались вопросы?</h3>
+						</div>
+						<div class="col-sm-4 col-xl-4">
+							<a href="tel:84951084131" class="footer__phone h3">+7 495 108-41-31</a>
+						</div>
+						<div class="col-sm-4 col-xl-3">
+							<a href="mailto:hello@dataphone.com" class="footer__email h3">hello@dataphone.com</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xl-11 offset-xl-1">
+						<div class="footer__hr"></div>
+					</div>
+				</div>
+
+				<div class="footer__bottom">
+					<div class="row">
+						<div class="col-xl-11 offset-xl-1">
+							<div class="footer__links">
+								<a href="#">Политика конфиденциальности</a>
+								<a href="#">Пользовательское соглашение</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="popup-buy">
+			<div class="popup-buy__bg js-tgl-popup-buy"></div>
+
+			<div class="popup-buy__content">
+				<div class="popup-buy__overlay js-tgl-popup-buy"></div>
+
+				<div class="popup-buy__wrap">
+					<form action="/" method="POST" class="popup-buy-wrap popup-buy-wrap_type_1">
+
+						<input class="popup-buy-wrap__hidden js-hidden-order" type="hidden" name="accessory-order" id="accessory-order" value="">
+
+						<button class="popup-buy-wrap__close js-tgl-popup-buy" type="button">
+							<img src="img/ui-icon/close.svg" alt="close" class="img-svg">
+						</button>
+
+						<div class="popup-buy-wrap__content popup-buy-wrap__content_display popup-buy-wrap__content_visible">
+							<h3 class="popup-buy-wrap__title">Заказать</h3>
+
+							<div class="popup-buy-wrap__fullname">
+								<div class="formfield">
+									<input name="fullname" type="text" class="formfield__input" id="fullname">
+									<label for="fullname" class="formfield__label">ФИО</label>
+								</div>
+							</div>
+
+							<div class="popup-buy-wrap__email">
+								<div class="formfield">
+									<input name="email" type="email" class="formfield__input" id="email">
+									<label for="email" class="formfield__label">E-Mail</label>
+								</div>
+							</div>
+
+							<div class="popup-buy-wrap__phone">
+								<div class="formfield">
+									<input name="tel" type="tel" class="formfield__input" id="phone">
+									<label for="phone" class="formfield__label">Телефон</label>
+								</div>
+							</div>
+
+							<div class="popup-buy-wrap__message">
+								<div class="textarea-spoiler">
+									<div class="textarea-spoiler__head">
+										<button class="textarea-spoiler__toggle" type="button">
+											<span class="link">оставить сообщение</span>
+											<img src="img/ui-icon/btn-link-arrow.svg" class="img-svg">
+										</button>
+									</div>
+									<div class="textarea-spoiler__body" style="display: none;">
+										<div class="formfield formfield_textarea">
+											<textarea name="message" class="formfield__textarea" placeholder="Текст..."></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="popup-buy-wrap__submit">
+								<button class="btn-ac" type="submit">
+									<span class="btn-ac__text">Отправить</span>
+								</button>
+							</div>
+
+							<div class="popup-buy-wrap__politconf">
+								<div class="formcheck">
+									<input type="checkbox" name="politconf" id="politconf-buy" class="formcheck__input" checked>
+									<label for="politconf-buy" class="formcheck__label">Даю согласие на обработку персональных данных, а также соглашаюсь с <a href="#" target="_blank">Политикой конфиденциальности</a></label>
+								</div>
+							</div>
+						</div>
+
+						<div class="popup-buy-wrap__end popup-buy-wrap__end_hide">
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</html>
