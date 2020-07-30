@@ -1964,6 +1964,17 @@
 
 	&__title {
 		margin-bottom: 8px;
+
+		a {
+			color: $textBtn;
+			text-decoration: none;
+			outline: none !important;
+	
+			&:hover, &:focus, &:active {
+				text-decoration: underline;
+				color: $textBtn;
+			}
+		}
 	}
 
 	&__price {
